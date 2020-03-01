@@ -1,5 +1,16 @@
 {
-    "bikeride": [
-        
-    ]
+  "bikeride": [
+    {
+      "title": "Canal Lachine",
+      "city": "Lille",
+      "state": "Nord",
+      "country": "France",
+      "meetingpoint": "devant le marché Atwater",
+      "km": "4",
+      "description": "beau",
+      "nbparticipants": "5",
+      "level": "3",
+      "id": 1
+    }
+  ]
 }
