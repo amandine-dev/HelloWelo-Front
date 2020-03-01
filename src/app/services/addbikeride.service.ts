@@ -13,7 +13,7 @@ export class AddbikerideService {
 
   
   save(bikeride: BikerideModel): Observable<BikerideModel> {
-    return this.http.post<BikerideModel>('/', bikeride);
+    return this.http.post<BikerideModel>('http://localhost:3000/bikeride', bikeride);
   }
 
 
