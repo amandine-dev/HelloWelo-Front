@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Clicker+Script&display=swap');
+
+:host {
+    background-color:white ;
+    justify-content: flex-end;
+    margin-top: 5px;
+    color: black;
+    float: right;
+    
+}
+
+
+  
+.nav{
+  margin:0.5% 0 0 0;
+  justify-content: flex-end;
+  display: inline-flex;
+  position: relative;
+  max-width: 100%;
+  background-color: (0,0,0,0.5);
+  padding: 0 20px;
+  box-shadow: 0 2px 2px grey;
+  color: black;
+  font-size: 0.8em;
+    
+  }
+  
+.nav-button {
+  display: inline-flex;
+  align-items: flex-end;
+  list-style-type: none;
+  margin-right: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: black;
+  padding: 8px;
+
+  }
+  
+.nav-button:hover{
+  color:rgb(153, 195, 58);
+  text-decoration:black;
+  text-decoration-style: solid;;
+  text-decoration-line: underline;;
+  text-underline-offset: 6px;
+     
+  }
+
+   
+.picto {
+    padding:0 6px 0 0px;
+    height: 1.45em;
+    margin-bottom: 0.2em;
+    
+  
+}
+  
+
+    
+.button {
+  background-color: rgb(255, 255, 255, 0.85);
+  text-transform: uppercase;
+  font-size: 0.65em;
+  letter-spacing: 1px;
+  padding: 7px;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  }
+    
+       
+ 
+    
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
