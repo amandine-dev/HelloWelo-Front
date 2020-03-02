@@ -4,3 +4,61 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+::placeholder {
+    font-style: italic;
+    font-size: small;
+
+}
+//boutons//
+.btn { 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;        
+}
+
+.btn1{
+    
+    color : black;
+    font-size : 0.8em;
+    font-weight: 550;
+    background-color: rgb(244, 244, 244);
+    border-radius: 5px;
+    border-width: 1px;
+    text-align: center; 
+    text-decoration:none; 
+    margin: 25 2525 25 25; 
+    padding: 20 010 20 10;
+       
+  }
+
+  .btnvert{
+    border-color: rgb(145, 181, 8);
+    color : rgb(145, 181, 8);
+
+  }
+
+  .btnred{
+    border-color: rgb(174, 0, 24);
+    color : rgb(174, 0, 24);
+
+  }
+
+  
+  
+  
+  .btn1:hover{
+      background: #FFFFFF;
+      box-shadow: 0 2px 1px 0 rgba(0,0,0,0.19);
+      text-decoration:none;
+  }
+  
+    
+  
+    
+  .btnnoir{
+   color: black;
+  } 
+

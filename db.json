@@ -1,0 +1,30 @@
+{
+  "bikeride": [
+    {
+      "title": "Canal Lachine",
+      "city": "Lille",
+      "state": "Nord",
+      "country": "France",
+      "meetingpoint": "devant le marché Atwater",
+      "km": "4",
+      "description": "beau",
+      "nbparticipants": "5",
+      "level": "3",
+      "id": 1
+    },
+    {
+      "title": "Le long du canal Lachine",
+      "date": "",
+      "time": "",
+      "city": "",
+      "state": "",
+      "country": "",
+      "meetingpoint": "devant le marché Atwater",
+      "km": 5,
+      "description": "super balade la bas, ",
+      "nbparticipants": "",
+      "level": "",
+      "id": 2
+    }
+  ]
+}
