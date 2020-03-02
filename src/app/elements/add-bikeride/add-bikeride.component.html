@@ -2,7 +2,7 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
             <label for="titrebalade">Titre de la balade</label>
-            <input formControlName="title" type="text" class="form-control" id="titrebalade" name="titrebalade" placeholder="ex: Balade le long du canal Lachine" required>
+            <input formControlName="title" type="text" class="form-control" id="titrebalade" placeholder="ex: Balade le long du canal Lachine" required>
         </div>
         <div class="form-group">
             <label for="date">Date</label>
@@ -12,32 +12,26 @@
             <label for="time">Horaire</label>
             <input formControlName="time" id="datepickerDemoInline" class="input" type="time" data-display-mode="inline"> 
             </div>
-        <div class="form-group">
-            <label for="ville">Ville</label>
-            <select formControlName="city" type="text" class="form-control" id="ville" name="ville">
-                <option>
-            
-                </option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="region">Région</label>
-            <select formControlName="state" type="text" class="form-control" id="region" name="region">
-                <option>
-
-                </option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="pays">Pays</label>
-            <select formControlName="country" type="text" class="form-control" id="pays" name="pays">
-                <option>
-
-                </option>
-            </select> 
-        </div>
-        <div class="form-group">
-            <label for="meetingpoint">Lieu de rendez-vous</label>
+            <div class="form-group">
+                <label for="pays">Pays</label>
+                <select (change)="onChange()" formControlName="country" type="text" class="form-control" id="pays">
+                    <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="region">Région</label>
+                <select (change)="onChange()" formControlName="state" type="text" class="form-control" id="region">
+                    <option *ngFor="let state of states" [value]="state.id">{{ state.name }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="ville">Ville</label>
+                <select (change)="onChange()" formControlName="city" type="text" class="form-control" id="ville">
+                    <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="meetingpoint">Lieu de rendez-vous</label>
             <input formControlName="meetingpoint" type="text" class="form-control" id="meetingpoint" name="meetingpoint" placeholder="ex: au croisement de..."required>
         </div>
         <div class="form-group">
@@ -46,27 +40,27 @@
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <textarea formControlName="description" name="description" id="description" class="form-control" placeholder="250 caractères max." maxlength="250"></textarea>
+            <textarea formControlName="description" id="description" class="form-control" placeholder="250 caractères max." maxlength="250"></textarea>
         </div>
         <div class="form-group">
             <label for="nbparticipants">Nombre de participants</label>
-            <input formControlName="nbparticipants" type="number" class="form-control" id="nbparticipants" name="nbparticipants" maxlength="40" placeholder="max. 40">
+            <input formControlName="nbparticipants" type="number" class="form-control" id="nbparticipants" maxlength="40" placeholder="max. 40">
         </div>
         <div class="form-group">
             <label for="level">Difficulté</label>
-            <select formControlName="description" class="form-control" id="exampleFormControlSelect1" name="level">
+            <select formControlName="description" class="form-control" id="exampleFormControlSelect1">
               <option value=""></option>
             </select>
         </div>
         <br>
         <div class="btn">
             <div class="btn">
-                <button class="btn btn1 btnred"><a href=#><span class="btnnoir">Ret</span><span class="btnred">O</span><span class="btnnoir">ur</span>
-            </a></button>    
+                <button class="btn btn1 btnred"><span class="btnnoir">Ret</span><span class="btnred">O</span><span class="btnnoir">ur</span>
+            </button>    
             </div>
             <div class="btn">
-                <button class="btn btn1 btnvert"><a href=#><span class="btnvert">O</span><span class="btnnoir">k g</span><span class="btnvert">O</span><span class="btnnoir"> Wel</span><span class="btnvert">O</span><span class="btnnoir"> !</span>
-                </a></button>
+                <button class="btn btn1 btnvert"><span class="btnvert">O</span><span class="btnnoir">k g</span><span class="btnvert">O</span><span class="btnnoir"> Wel</span><span class="btnvert">O</span><span class="btnnoir"> !</span>
+                </button>
             </div>
         </div>
     </form>
