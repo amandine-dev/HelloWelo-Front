@@ -1,0 +1,19 @@
+.image{
+    height: 250px;
+    background-image: url("/assets/backgroundimage.jpg");
+    background-repeat: no-repeat;
+    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+    background-size: cover; /* version standardisée */ 
+    background-attachment: scroll;
+    background-position-y: 20%;
+}
+  
+  
+  .logo {
+    width: 170px;
+    margin:  30 0 0 30;
+    padding: 30 0 0 30;
+   
+  }
+  
+ 

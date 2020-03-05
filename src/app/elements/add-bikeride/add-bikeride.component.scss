@@ -1,17 +1,27 @@
-
+.grid-container {
+    margin: 30px 20px 20px 20px;
+    
+  }
+    
 label {
     color: black;
     font-size: medium;
 }
 
-.avatar {
-    background: white;
-    border-radius: 50%;
-    border-color: 2px solid black ;    
+.entite {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 10 0 10;
+    padding: 0  10 0;
+    justify-content: space-around;
+    align-items: stretch;
+    
 }
 
 .form-group {
-    display: inline
+    margin: 15px 5 5 5;
+    
 }
 
 .btnaddstyle{

@@ -2,9 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Clicker+Script&display=swap');
 
 :host {
-    background-color:white ;
     justify-content: flex-end;
-    margin-top: 5px;
     color: black;
     float: right;
     
@@ -13,13 +11,10 @@
 
   
 .nav{
-  margin:0.5% 0 0 0;
   justify-content: flex-end;
   display: inline-flex;
   position: relative;
   max-width: 100%;
-  background-color: (0,0,0,0.5);
-  padding: 0 20px;
   box-shadow: 0 2px 2px grey;
   color: black;
   font-size: 0.8em;
@@ -40,10 +35,10 @@
   
 .nav-button:hover{
   color:rgb(153, 195, 58);
-  text-decoration:black;
-  text-decoration-style: solid;;
-  text-decoration-line: underline;;
-  text-underline-offset: 6px;
+  text-decoration: black;
+  text-decoration-line: underline;
+  text-underline-offset: 7px;
+  
      
   }
 

@@ -24,6 +24,12 @@ export class AddBikerideComponent implements OnInit {
     { id: 1, name: 'Lille' },
     { id: 2, name: 'Arras' }
   ];
+  levels = [
+    { id: 1, name: 'Tranquille, Emile' },
+    { id: 2, name: 'Sport - tranquille' },
+    { id: 3, name: 'Tour de France' }
+
+  ];
 
 
   constructor(

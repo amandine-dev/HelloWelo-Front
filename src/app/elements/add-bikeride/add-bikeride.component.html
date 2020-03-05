@@ -1,17 +1,23 @@
-<div class="container">
+<div class="grid-container">
     <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
             <label for="titrebalade">Titre de la balade</label>
             <input formControlName="title" type="text" class="form-control" id="titrebalade" placeholder="ex: Balade le long du canal Lachine" required>
         </div>
-        <div class="form-group">
-            <label for="date">Date</label>
-            <input formControlName="date" id="datepickerDemoInline" class="input" type="date" data-display-mode="inline" value="09/25/2018">
-        </div>
-        <div class="form-group">
-            <label for="time">Horaire</label>
-            <input formControlName="time" id="datepickerDemoInline" class="input" type="time" data-display-mode="inline"> 
+        <div class="entite">
+            <div class="form-group">
+                <label for="date">Date</label>
+                <input formControlName="date" id="datepickerDemoInline" class="input" type="date" data-display-mode="inline" value="09/25/2018">
             </div>
+            <div class="form-group">
+                <label for="time">Horaire</label>
+                <input formControlName="time" id="datepickerDemoInline" class="input" type="time" data-display-mode="inline"> 
+                </div>
+            <div class="form-group">
+                <label for="km">Km</label>
+                <input formControlName="km" type="number" class="form-control" id="km" name="km" maxlength="5" placeholder="min. 1km" required>
+            </div>    
+        </div>
             <div class="form-group">
                 <label for="pays">Pays</label>
                 <select (change)="onChange()" formControlName="country" type="text" class="form-control" id="pays">
@@ -34,23 +40,22 @@
                 <label for="meetingpoint">Lieu de rendez-vous</label>
             <input formControlName="meetingpoint" type="text" class="form-control" id="meetingpoint" name="meetingpoint" placeholder="ex: au croisement de..."required>
         </div>
-        <div class="form-group">
-            <label for="km">Km</label>
-            <input formControlName="km" type="number" class="form-control" id="km" name="km" maxlength="5" placeholder="min. 1km" required>
-        </div>
+
         <div class="form-group">
             <label for="description">Description</label>
             <textarea formControlName="description" id="description" class="form-control" placeholder="250 caractères max." maxlength="250"></textarea>
         </div>
-        <div class="form-group">
-            <label for="nbparticipants">Nombre de participants</label>
-            <input formControlName="nbparticipants" type="number" class="form-control" id="nbparticipants" maxlength="40" placeholder="max. 40">
-        </div>
-        <div class="form-group">
-            <label for="level">Difficulté</label>
-            <select formControlName="description" class="form-control" id="exampleFormControlSelect1">
-              <option value=""></option>
-            </select>
+        <div class="entite">
+            <div class="form-group">
+                <label for="nbparticipants">Nombre de participants</label>
+                <input formControlName="nbparticipants" type="number" class="form-control" id="nbparticipants" maxlength="40" placeholder="max. 40">
+            </div>
+            <div class="form-group">
+                <label for="level">Difficulté</label>
+                <select formControlName="description" class="form-control" id="exampleFormControlSelect1">
+                  <option *ngFor="let level of levels" [value]="level.id">{{ level.name }}</option>
+                </select>
+            </div>
         </div>
         <br>
         <div class="btn">
