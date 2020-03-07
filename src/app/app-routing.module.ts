@@ -9,16 +9,11 @@ import { ConnexionComponent } from './pages/connexion/connexion.component';
 
 const routes: Routes = [
   { path:'', component: HomeComponent },
-  {
-    path: 'page',
-    children: [
-      { path:'les-sorties', component: LesSortiesComponent },
-      { path:'proposer-une-balade', component : ProposerUneBaladeComponent },
-      { path:'contact', component: ContactComponent },
-      { path:'mon-espace', component: MonEspaceComponent},
-      { path:'connexion', component: ConnexionComponent }
-    ]
-  }
+  { path:'les-sorties', component: LesSortiesComponent },
+  { path:'proposer-une-balade', component : ProposerUneBaladeComponent },
+  { path:'contact', component: ContactComponent },
+  { path:'mon-espace', component: MonEspaceComponent},
+  { path:'connexion', component: ConnexionComponent }
 ];
 
 @NgModule({

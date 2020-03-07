@@ -6,14 +6,15 @@
     background-size: cover; /* version standardisée */ 
     background-attachment: scroll;
     background-position-y: 20%;
+    box-shadow: 0 10px 0 0 black;
 }
   
   
-  .logo {
-    width: 170px;
-    margin:  30 0 0 30;
-    padding: 30 0 0 30;
-   
-  }
+.logo {
+    width: 190px;
+    margin:  0% 4% 10%;
+    padding: 2% 0 0 0;
+    position:static
+   }
   
  

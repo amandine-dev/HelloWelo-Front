@@ -2,15 +2,13 @@
 @import url('https://fonts.googleapis.com/css?family=Clicker+Script&display=swap');
 
 :host {
-    justify-content: flex-end;
-    color: black;
-    float: right;
-    
+  justify-content: flex-end;
+  color: black;
+  float: right;
 }
 
-
-  
-.nav{
+.nav {
+  background-color:rgb(255, 255, 255, 0.90);
   justify-content: flex-end;
   display: inline-flex;
   position: relative;
@@ -18,41 +16,33 @@
   box-shadow: 0 2px 2px grey;
   color: black;
   font-size: 0.8em;
-    
-  }
-  
+}
+
 .nav-button {
   display: inline-flex;
   align-items: flex-end;
   list-style-type: none;
   margin-right: 20px;
-  margin-top: 5px;
   margin-bottom: 5px;
   color: black;
   padding: 8px;
 
-  }
-  
-.nav-button:hover{
-  color:rgb(153, 195, 58);
+}
+
+.nav-button:hover {
+  color: rgb(153, 195, 58);
   text-decoration: black;
   text-decoration-line: underline;
   text-underline-offset: 7px;
-  
-     
-  }
-
-   
-.picto {
-    padding:0 6px 0 0px;
-    height: 1.45em;
-    margin-bottom: 0.2em;
-    
-  
 }
-  
 
-    
+.picto {
+  padding: 0 6px 0 0px;
+  height: 1.45em;
+  margin-bottom: 0.2em;
+}
+
+
 .button {
   background-color: rgb(255, 255, 255, 0.85);
   text-transform: uppercase;
@@ -62,16 +52,8 @@
   text-align: center;
   color: black;
   text-decoration: none;
-  }
-    
-       
- 
-    
+}
 
 * {
   box-sizing: border-box;
 }
-
-
-
-

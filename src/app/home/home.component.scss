@@ -1,2 +1,22 @@
-
-
+body {
+    margin: 5% 5 5;
+    background: url("/assets/backgroundimage.jpg") no-repeat center;
+    -webkit-background-size: cover;
+    /* pour anciens Chrome et Safari */
+    background-size: cover;
+    /* version standardisée */
+    background-attachment: scroll;
+  }
+  
+  .container {
+    display: block;
+    flex-direction: row;
+    justify-content: space-between;
+  
+  
+  }
+  
+  .logo {
+    width: 150px;
+  }
+  

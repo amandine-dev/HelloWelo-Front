@@ -73,6 +73,6 @@ export class AddBikerideComponent implements OnInit {
 
   onChange() 
   {
-    alert('Aieeee!');
+    alert('onChange pour filtrer les balades via la BDD!');
   }
 }
