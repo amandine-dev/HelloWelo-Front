@@ -1,38 +1,46 @@
-  .form-search{
+  .form-search {
     display: flex;
     background-color: white;
     border-radius: 10px;
-    justify-content:center;
-    height: 440px;
+    justify-content: center;
+    height: 35em;
     width: 31em;
     margin-top: 10px;
     margin-left: 22%;
     padding: 16px;
-    box-shadow: 0 0 100px #333;
-   
-    }
-  
-  .recherche{
+    box-shadow: 0 20px 5 5 black;
+    
+  }
+
+  .champ {
+    min-width: 100%
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .recherche {
     padding-top: 1.7em;
     float: center;
   }
-  
-  .label{
+
+  .label {
     padding-top: 0m;
     width: 16em;
     font-size: 0.9em;
     width: 250px;
-    padding:0 0 0 0;
+    padding: 0 0 0 0;
   }
-  
-  .balade{
+
+  .balade {
     background-color: white;
     border-radius: 10px;
     height: 25em;
     width: 60em;
-  } 
-  
-  .legend{
+  }
+
+  .legend {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.1em;
     padding-top: 20px;
