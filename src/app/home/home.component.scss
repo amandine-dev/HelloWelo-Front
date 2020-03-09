@@ -7,16 +7,19 @@ body {
     /* version standardisée */
     background-attachment: scroll;
   }
-  
-  .container {
-    display: block;
-    flex-direction: row;
-    justify-content: space-between;
-  
-  
-  }
-  
+    
   .logo {
-    width: 150px;
+    width: 160px;
+    margin: 0% 0 0% 40%;
+    padding: 5% 0 0 0;
+   }
+
+   .position{
+    margin: 0 0 0 20%;  
   }
+
+  .position2{
+    margin: 0 20px 0 20px;  
+  }
+
   

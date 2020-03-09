@@ -37,8 +37,6 @@ label {
     gap: 10px;
 }
 
-
-
 .form-group {
     margin: 15px 5 5 5;  
 }
@@ -56,3 +54,31 @@ label {
     border-radius: 50%;
     border-color: 2px solid black ;  
 }
+
+img{
+    width: 100px;
+    border-radius: 100%;
+    margin: 10px;
+}
+
+h3{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.modal-card-head{
+    height: 50px;
+}
+
+.modal-card-foot{
+    height: 70px;
+    justify-content: right;
+    margin-bottom: 20px;
+}
+
+.modal{
+    box-shadow: 0px 4px 6px black;
+    border-radius: 20px;
+}
+
+

@@ -38,7 +38,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LesSortiesComponent,
     MonEspaceComponent,
     ProposerUneBaladeComponent,
-    HomeComponent
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
