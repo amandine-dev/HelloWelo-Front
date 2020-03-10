@@ -8,7 +8,6 @@ html, body { height: 100%; }
 ::placeholder {
     font-style: italic;
     font-size: small;
-
 }
 //boutons//
 .btn { 
@@ -19,7 +18,6 @@ html, body { height: 100%; }
 }
 
 .btn1{
-    
     color : black;
     font-size : 0.8em;
     font-weight: 550;
@@ -29,24 +27,23 @@ html, body { height: 100%; }
     text-align: center; 
     text-decoration:none; 
     margin: 25 25 25 25; 
-    padding: 20 010 20 10;
-       
+    padding: 20 010 20 10;    
   }
 
   .btnvert{
     border-color: rgb(145, 181, 8);
     color : rgb(145, 181, 8);
-
   }
 
   .btnred{
     border-color: rgb(174, 0, 24);
     color : rgb(174, 0, 24);
-
   }
 
-  
-  
+  .btnorange{
+    border-color:#FCB108;
+    color: #FCB108;
+  }
   
   .btn1:hover{
       background: #FFFFFF;

@@ -25,6 +25,18 @@
       "nbparticipants": "",
       "level": "",
       "id": 2
+    },
+    {
+      "title": "Book store",
+      "city": "Lille",
+      "state": "Nord",
+      "country": "France",
+      "meetingpoint": "au pont",
+      "km": "4",
+      "description": "tranquille",
+      "nbparticipants": "5",
+      "level": "3",
+      "id": 3
     }
   ]
 }

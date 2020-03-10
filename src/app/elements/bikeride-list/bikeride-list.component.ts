@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { AddbikerideService } from 'src/app/services/addbikeride.service';
+import { BikerideModel } from './../../models/bikeride.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bikeride-list.component.scss']
 })
 export class BikerideListComponent implements OnInit {
+  bikerides: BikerideModel[];
 
-  constructor() { }
+  constructor(
+    private addbikerideService: AddbikerideService,
+    private router: Router,
+  ) { }
+  
 
   ngOnInit(): void {
+    this.addbikerideService.getBikerides()
+    .subscribe(
+      (data: BikerideModel[]) => this.bikerides = data
+    );
   }
 
 }
