@@ -26,9 +26,8 @@ export class AddBikerideComponent implements OnInit {
   ];
   levels = [
     { id: 1, name: 'Tranquille, Emile' },
-    { id: 2, name: 'Sport - tranquille' },
+    { id: 2, name: 'Sport - Rando' },
     { id: 3, name: 'Tour de France' }
-
   ];
 
 
