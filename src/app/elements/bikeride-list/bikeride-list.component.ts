@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { AddbikerideService } from 'src/app/services/addbikeride.service';
-import { BikerideModel } from './../../models/bikeride.model';
+import { BikerideModel } from '../../models/bikeride.models';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

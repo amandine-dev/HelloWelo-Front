@@ -1,5 +1,5 @@
 <div class="grid-container">
-    <form [formGroup]="form" novalidate>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
        <!--div reunissant style, titre, date, heure, km--> 
     <div class="columns">
         <button class="buttonstyle" id="button"><span class="add">+</span><br><span class="addtext">Ajouter un style</span></button>
@@ -13,33 +13,21 @@
         <div class="columns">
             <div class="form-group column">
                 <label for="date">Date</label>
-                <input formControlName="date" id="datepickerDemoInline" class="input" type="date" data-display-mode="inline" value="09/25/2018">
+                <input formControlName="date" id="date" class="input" type="date" data-display-mode="inline" value="09/25/2018">
             </div>
             <div class="form-group column">
                 <label for="time">Horaire</label>
-                <input formControlName="time" id="datepickerDemoInline" class="input" type="time" data-display-mode="inline"> 
+                <input formControlName="time" id="time" class="input" type="time" data-display-mode="inline"> 
                 </div>
             <div class="form-group column">
                 <label for="km">Km</label>
-                <input formControlName="km" type="number" class="form-control" id="km" name="km" maxlength="5" placeholder="min. 1km" required>
+                <input formControlName="numberkm" type="number" class="form-control" id="km" name="km" maxlength="5" placeholder="min. 1km" required>
             </div>    
         </div>
     </div>
             <div class="form-group">
-                <label for="pays">Pays</label>
-                <select (change)="onChange()" formControlName="country" type="text" class="form-control" id="pays">
-                    <option *ngFor="let country of countries" [value]="country.id">{{ country.name }}</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="region">Région</label>
-                <select (change)="onChange()" formControlName="state" type="text" class="form-control" id="region">
-                    <option *ngFor="let state of states" [value]="state.id">{{ state.name }}</option>
-                </select>
-            </div>
-            <div class="form-group">
                 <label for="ville">Ville</label>
-                <select (change)="onChange()" formControlName="city" type="text" class="form-control" id="ville">
+                <select formControlName="cityId" type="text" class="form-control" id="ville">
                     <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
                 </select>
             </div>
@@ -55,7 +43,7 @@
         <div class="columns">
             <div class="form-group column">
                 <label for="nbparticipants">Nombre de participants</label>
-                <input formControlName="nbparticipants" type="number" class="form-control" id="nbparticipants" maxlength="40" placeholder="max. 40">
+                <input formControlName="numberMaxParticipants" type="number" class="form-control" id="nbparticipants" maxlength="40" placeholder="max. 40">
             </div>
             <div class="form-group column">
                 <label for="level">Difficulté</label>

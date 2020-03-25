@@ -2,10 +2,9 @@
     flex-wrap: wrap;
 }
 
-.card-deck{
-display: inline-flex;
+.list-group{ 
+    margin-top: 10px;
+    border-color: red;  
+    border: 2px;
 }
-
-.card-deck{
-    justify-content: center;
-}
+  

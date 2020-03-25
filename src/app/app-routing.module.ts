@@ -6,6 +6,8 @@ import { ProposerUneBaladeComponent } from './pages/proposer-une-balade/proposer
 import { ContactComponent } from './pages/contact/contact.component';
 import { MonEspaceComponent } from './pages/mon-espace/mon-espace.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
+import { AddLevelComponent } from './Level/add-level/add-level.component';
+
 
 const routes: Routes = [
   { path:'', component: HomeComponent },
@@ -13,7 +15,8 @@ const routes: Routes = [
   { path:'proposer-une-balade', component : ProposerUneBaladeComponent },
   { path:'contact', component: ContactComponent },
   { path:'mon-espace', component: MonEspaceComponent},
-  { path:'connexion', component: ConnexionComponent }
+  { path:'connexion', component: ConnexionComponent },
+  { path:'level', component: AddLevelComponent}
 ];
 
 @NgModule({

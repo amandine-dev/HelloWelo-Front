@@ -4,7 +4,7 @@
             <h3>Trouver une balade et rencontrer d'autres Welos !</h3>
         </div>
         <div></div>
-        <form class="champ">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate class="champ">
             <div class="form-group">
                 <label for="region">Région</label>
                 <select formControlName="state" type="text" class="form-control" id="region">
@@ -14,7 +14,7 @@
             <div class="form-group">
                 <label for="ville">Ville</label>
                 <select formControlName="city" type="text" class="form-control" id="ville">
-                    <option></option>
+                    <option *ngFor="let city of cities" [value]="city.id">{{ city.name }}</option>
                 </select>
             </div>
             

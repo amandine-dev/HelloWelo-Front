@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AddbikerideService } from 'src/app/services/addbikeride.service';
-import { BikerideModel } from 'src/app/models/bikeride.model'
+import { BikerideModel } from 'src/app/models/bikeride.models'
 
 @Component({
   selector: 'app-add-bikeride',
@@ -12,23 +12,11 @@ import { BikerideModel } from 'src/app/models/bikeride.model'
 export class AddBikerideComponent implements OnInit {
   form: FormGroup;
   //à retirer et remplacer par services - bdd //
-  countries = [
-    { id: 1, name: 'France' },
-    { id: 2, name: 'Espagne' }
-  ];
-  states = [
-    { id: 1, name: 'Nord' },
-    { id: 2, name: 'Pas de Calais' }
-  ];
-  cities = [
-    { id: 1, name: 'Lille' },
-    { id: 2, name: 'Arras' }
-  ];
-  levels = [
-    { id: 1, name: 'Tranquille, Emile' },
-    { id: 2, name: 'Sport - Rando' },
-    { id: 3, name: 'Tour de France' }
-  ];
+  bikerides = [];
+  cities = [];
+  levels = [];
+  types = []
+  
 
 
   constructor(
@@ -37,31 +25,33 @@ export class AddBikerideComponent implements OnInit {
     private router: Router
   ) { }
 
+  
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      title: ['', [Validators.required, Validators.maxLength(25)]],
-      date: ['', [Validators.required, Validators.pattern('^([0-9]{4})(-[0-9]{2}){2}$')]],
-      time: ['', [Validators.required, Validators.pattern('^[0-2][0-3]:[0-5][0-9]$')]],
-      city: ['', [Validators.required]],
-      state: ['', [Validators.required]],
-      country: ['', [Validators.required]],
-      meetingpoint: ['', [Validators.required, Validators.maxLength(50)]],
-      km: ['', [Validators.required, Validators.min(1)]],
-      description: ['', [Validators.required, Validators.maxLength(250)]],
-      nbparticipants: ['', [Validators.required, Validators.min(1), Validators.max(40)]],
-      level: ['', [Validators.required]],
+      title: new FormControl(''),
+      date: new FormControl (''),
+      time: new FormControl (''),
+      numberkm: new FormControl (''),
+      description: new FormControl (''),
+      cityId: new FormArray ([]),
+      meetingpoint: new FormControl (''),
+      numberMaxParticipants: new FormControl (''),
+      rideTypeId: new FormArray ([]),
+      rideLevelId: new FormArray ([]),
+      rideStatusId: new FormArray ([]),
     });
   }
 
-  onSubmit(): void {
 
+
+  onSubmit(): void {
     if (this.form.valid) {
       const bikeride = this.form.value as BikerideModel;
 
-      this.addbikerideService.save(bikeride)
+      this.addbikerideService.saveBikerides(bikeride)
         .subscribe(
           (data: BikerideModel) => {
-            this.router.navigate(['/bikeride']);
+            this.router.navigate(['/bikerides']);
           },
           (err: Error) => console.log(err),
           () => console.log('Request has completed')
@@ -70,8 +60,8 @@ export class AddBikerideComponent implements OnInit {
     }
   }
 
-  onChange() 
-  {
-    alert('onChange pour filtrer les balades via la BDD!');
-  }
+ //onChange() 
+ //{
+ //alert('pour les country, state, city onChange pour changer les states en fonction du pays choisit');
+ //}
 }

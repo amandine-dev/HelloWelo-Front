@@ -1,5 +1,5 @@
 {
-  "bikeride": [
+  "bikerides": [
     {
       "title": "Canal Lachine",
       "city": "Lille",
@@ -39,4 +39,8 @@
       "id": 3
     }
   ]
+
+  
+
+  
 }
