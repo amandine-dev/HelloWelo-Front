@@ -1,0 +1,33 @@
+<div class="">
+    <div>
+        <app-header></app-header>
+    </div>
+    <div class="container">
+        <div class="grid-container">
+            <h1 class="titreadmin">Ajouter un level</h1>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+                <div class="form-group column">
+                    <label for="titrebalade">Nom du level</label>
+                    <input formControlName="name" type="text" class="form-control" id="level" placeholder="ex.Tranquille Emile..." required>
+                </div>   
+                <div class="btn">
+                    <div class="btn">
+                        <button class="btn btn1 btnred"><span class="btnnoir">Ret</span><span class="btnred">O</span><span class="btnnoir">ur</span>
+                    </button>    
+                    </div>
+                    <div class="btn">
+                        <button class="btn btn1 btnvert"><span class="btnvert">O</span><span class="btnnoir">k g</span><span class="btnvert">O </span><span class="btnnoir"> Wel</span><span class="btnvert">O</span><span class="btnnoir"> !</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <br>
+            <app-list-level></app-list-level>
+        </div>
+        <br>
+        <br>
+
+    </div>
+</div>
+
+

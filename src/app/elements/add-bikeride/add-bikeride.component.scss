@@ -1,17 +1,48 @@
-
+.grid-container {
+    margin: 50px 20px 20px 20px;  
+    gap: 20px
+}
+    
 label {
     color: black;
     font-size: medium;
 }
 
-.avatar {
-    background: white;
-    border-radius: 50%;
-    border-color: 2px solid black ;    
+.titrebalade{
+    min-width: 79%;   
+}
+
+.buttonstyle{
+    background-color: white;
+    border-radius: 100%;
+    width: 140px;
+    height: 140px;
+    border-color: lightgrey;  
+}
+
+.add{
+    font-size: 80px;
+    font-weight: lighter;
+    color: lightgrey;
+    position: center;
+}
+
+.addtext{
+    font-size: 9px;
+    position: bottom;
+}
+
+.entite {
+    margin-bottom: 20px;
+    gap: 10px;
 }
 
 .form-group {
-    display: inline
+    margin: 15px 5 5 5;  
+}
+
+.btn{
+    flex-wrap: wrap;
 }
 
 .btnaddstyle{
@@ -23,3 +54,33 @@ label {
     border-radius: 50%;
     border-color: 2px solid black ;  
 }
+
+img{
+    width: 100px;
+    border-radius: 100%;
+    margin: 10px;
+}
+
+h3{
+    text-align: center;
+    margin-top: 15px;
+}
+
+.modal-card-head{
+    height: 50px;
+}
+
+.modal-card-foot{
+    height: 70px;
+    justify-content: right;
+    margin-bottom: 20px;
+}
+
+.modal{
+    box-shadow: 0px 4px 6px black;
+    border-radius: 20px;
+}
+.space{
+    margin-right: 100px;
+}
+
