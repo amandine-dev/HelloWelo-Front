@@ -1,0 +1,27 @@
+.presentation {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titre {
+    width: 100%;
+    text-align: center;
+}
+
+.message {
+    width: 100%;
+    margin: 30px;
+}
+
+.column {
+    display: flex;
+    justify-content: space-between;
+}
+
+p {
+    text-align: justify;
+}
+
+.pres {
+    margin: 30px;
+}
