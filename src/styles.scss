@@ -17,6 +17,10 @@ html, body { height: 100%; }
 .container {
   margin-top: 20px;
 }
+
+.container-user {
+  margin: 60px;
+}
  
 //boutons//
 .btn { 
@@ -70,8 +74,12 @@ html, body { height: 100%; }
   }
   
   .list {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin: 30px;
+    border-color: red;
+}
+
+.list-group{
+  margin: 10px;
 }
   
 

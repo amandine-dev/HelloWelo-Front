@@ -7,6 +7,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { MonEspaceComponent } from './pages/mon-espace/mon-espace.component';
 import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { AddLevelComponent } from './Level/add-level/add-level.component';
+import { LoginComponent } from './User/login/login.component';
+import { RegisterComponent } from './User/register/register.component';
 
 
 const routes: Routes = [
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path:'contact', component: ContactComponent },
   { path:'mon-espace', component: MonEspaceComponent},
   { path:'connexion', component: ConnexionComponent },
-  { path:'level', component: AddLevelComponent}
+  { path:'level', component: AddLevelComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({
