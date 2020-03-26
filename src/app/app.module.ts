@@ -21,6 +21,7 @@ import { MonEspaceComponent } from './pages/mon-espace/mon-espace.component';
 import { ProposerUneBaladeComponent } from './pages/proposer-une-balade/proposer-une-balade.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ContactFormComponent } from './Core/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     LesSortiesComponent,
     MonEspaceComponent,
     ProposerUneBaladeComponent,
-    HomeComponent
+    HomeComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
