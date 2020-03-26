@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="head">
+        <h1 class="titreadmin">Liste des levels disponible</h1>
+      </div>
+      <div class="list">
+        <ul class="list-group" *ngFor="let level of levels">
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ level.name }}
+          </li>
+        </ul> 
+      </div>
+  </div>

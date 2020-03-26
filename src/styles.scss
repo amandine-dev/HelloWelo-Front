@@ -1,16 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,600&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Clicker+Script&display=swap');
+
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 ::placeholder {
     font-style: italic;
     font-size: small;
-
 }
+
+.grid-container {
+  padding: 20px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.container-user {
+  margin: 60px;
+}
+ 
 //boutons//
 .btn { 
     display: flex;
@@ -20,7 +31,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 .btn1{
-    
     color : black;
     font-size : 0.8em;
     font-weight: 550;
@@ -29,36 +39,47 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-width: 1px;
     text-align: center; 
     text-decoration:none; 
-    margin: 25 2525 25 25; 
-    padding: 20 010 20 10;
-       
+    margin: 25 25 25 25; 
+    padding: 20 010 20 10;    
   }
 
   .btnvert{
     border-color: rgb(145, 181, 8);
     color : rgb(145, 181, 8);
-
   }
 
   .btnred{
     border-color: rgb(174, 0, 24);
     color : rgb(174, 0, 24);
-
   }
 
-  
-  
+  .btnorange{
+    border-color:#FCB108;
+    color: #FCB108;
+  }
   
   .btn1:hover{
       background: #FFFFFF;
       box-shadow: 0 2px 1px 0 rgba(0,0,0,0.19);
       text-decoration:none;
   }
-  
-    
-  
-    
+   
   .btnnoir{
    color: black;
   } 
+
+  // côté admin
+  .titreadmin {
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .list {
+    margin: 30px;
+    border-color: red;
+}
+
+.list-group{
+  margin: 10px;
+}
+  
 
