@@ -20,6 +20,15 @@ import { MonEspaceComponent } from './pages/mon-espace/mon-espace.component';
 import { ProposerUneBaladeComponent } from './pages/proposer-une-balade/proposer-une-balade.component';
 import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddLevelComponent } from './Level/add-level/add-level.component';
+import { EditLevelComponent } from './Level/edit-level/edit-level.component';
+import { ListLevelComponent } from './Level/list-level/list-level.component';
+import { AddTypeComponent } from './Type/add-type/add-type.component';
+import { EditTypeComponent } from './Type/edit-type/edit-type.component';
+import { ListTypeComponent } from './Type/list-type/list-type.component';
+import { ListCityComponent } from './City/list-city/list-city.component';
+import { LoginComponent } from './User/login/login.component';
+import { RegisterComponent } from './User/register/register.component';
 import { ContactFormComponent } from './Core/contact-form/contact-form.component';
 
 @NgModule({
@@ -38,7 +47,16 @@ import { ContactFormComponent } from './Core/contact-form/contact-form.component
     MonEspaceComponent,
     ProposerUneBaladeComponent,
     HomeComponent,
-    ContactFormComponent
+    AddLevelComponent,
+    EditLevelComponent,
+    ListLevelComponent,
+    AddTypeComponent,
+    EditTypeComponent,
+    ListTypeComponent,
+    ListCityComponent,
+    LoginComponent,
+    RegisterComponent,
+    ContactFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactFormComponent implements OnInit {
 
+  form: FormGroup;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(): void {
+    console.log(this.form.valid);
+
   }
 
 }
