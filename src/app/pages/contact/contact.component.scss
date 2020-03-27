@@ -1,3 +1,11 @@
+p {
+    text-align: justify;
+}
+
+.grid-container {
+    margin: 3% 6% 6%;
+}
+
 .presentation {
     display: flex;
     flex-wrap: wrap;
@@ -8,20 +16,33 @@
     text-align: center;
 }
 
-.message {
-    width: 100%;
-    margin: 30px;
-}
-
 .column {
     display: flex;
     justify-content: space-between;
 }
 
-p {
-    text-align: justify;
-}
-
 .pres {
     margin: 30px;
+}
+
+.message {
+    width: 100%;
+    margin: 30px;
+}
+
+.end {
+    display: flex;
+    justify-content: column;
+}
+
+.team {
+    display: flex;
+    align-content: space-between;
+}
+
+.welos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
