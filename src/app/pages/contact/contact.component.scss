@@ -2,6 +2,10 @@ p {
     text-align: justify;
 }
 
+h2 {
+    text-align: center;
+}
+
 .grid-container {
     margin: 3% 6% 6%;
 }
@@ -30,14 +34,10 @@ p {
     margin: 30px;
 }
 
-.end {
-    display: flex;
-    justify-content: column;
-}
-
 .team {
     display: flex;
     align-content: space-between;
+    margin-top: 3%;
 }
 
 .welos {
@@ -45,4 +45,10 @@ p {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
 }
