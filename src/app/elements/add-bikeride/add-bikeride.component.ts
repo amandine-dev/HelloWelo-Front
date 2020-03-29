@@ -51,7 +51,7 @@ export class AddBikerideComponent implements OnInit {
       this.addbikerideService.saveBikerides(bikeride)
         .subscribe(
           (data: BikerideModel) => {
-            this.router.navigate(['/bikerides']);
+            this.router.navigate(['/les-sorties']);
           },
           (err: Error) => console.log(err),
           () => console.log('Request has completed')

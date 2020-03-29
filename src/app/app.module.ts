@@ -29,6 +29,7 @@ import { ListTypeComponent } from './Type/list-type/list-type.component';
 import { ListCityComponent } from './City/list-city/list-city.component';
 import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
+import { DetailsBaladeComponent } from './pages/details-balade/details-balade.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { RegisterComponent } from './User/register/register.component';
     ListCityComponent,
     LoginComponent,
     RegisterComponent,
+    DetailsBaladeComponent,
   ],
   imports: [
     BrowserModule,

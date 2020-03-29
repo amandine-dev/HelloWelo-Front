@@ -9,6 +9,8 @@ import { ConnexionComponent } from './pages/connexion/connexion.component';
 import { AddLevelComponent } from './Level/add-level/add-level.component';
 import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
+import { BikerideComponent } from './elements/bikeride/bikeride.component';
+import { DetailsBaladeComponent } from './pages/details-balade/details-balade.component';
 
 
 const routes: Routes = [
@@ -20,7 +22,8 @@ const routes: Routes = [
   { path:'connexion', component: ConnexionComponent },
   { path:'level', component: AddLevelComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent}
+  {path: 'register', component: RegisterComponent},
+  {path: 'bikerides', component: DetailsBaladeComponent}
 ];
 
 @NgModule({
