@@ -29,6 +29,8 @@ import { ListTypeComponent } from './Type/list-type/list-type.component';
 import { ListCityComponent } from './City/list-city/list-city.component';
 import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
+import { DetailsBaladeComponent } from './pages/details-balade/details-balade.component';
+import { ToggleBoxComponent } from './elements/toggle-box/toggle-box.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { RegisterComponent } from './User/register/register.component';
     ListCityComponent,
     LoginComponent,
     RegisterComponent,
+    DetailsBaladeComponent,
+    ToggleBoxComponent,
   ],
   imports: [
     BrowserModule,
