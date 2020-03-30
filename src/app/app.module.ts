@@ -31,6 +31,7 @@ import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
 import { BikerideSearchResultComponent } from './elements/bikeride-search-result/bikeride-search-result.component';
 import { SearchResultsComponent } from './pages/search-results/search-results/search-results.component';
+import { ContactFormComponent } from './Core/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { SearchResultsComponent } from './pages/search-results/search-results/se
     RegisterComponent,
     BikerideSearchResultComponent,
     SearchResultsComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
