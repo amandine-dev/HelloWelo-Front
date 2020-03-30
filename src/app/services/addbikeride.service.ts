@@ -14,7 +14,7 @@ const apiUrl = "http://localhost:3000/bikerides";
 export class AddbikerideService {
 
   constructor(private http: HttpClient, private errorHandlerService: ErrorhandlerService) { }
-  //CRUD De l'Addbikeride
+  //CRUD BikeRide
 
   getBikerides(): Observable<any> {
     return this.http.get(apiUrl)
@@ -50,7 +50,7 @@ export class AddbikerideService {
    return this.http.put<BikerideModel>(url, bikeride)
    .pipe(
      tap(_ => console.log(`updated bikeride id=${id}`)),
-     catchError(this.errorHandlerService.handleError<any>('updateBikeride'))
+     catchError(this.errorHandlerService.handleError<any>('editBikeride'))
    );
   }
 
