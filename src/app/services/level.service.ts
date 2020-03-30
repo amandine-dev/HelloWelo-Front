@@ -1,64 +1,63 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ErrorHandler } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
 import { LevelModel } from '../models/level.models';
+import { ErrorhandlerService } from './error-handler.service';
 
+
+const apiUrl = "http://localhost:3000/levels";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LevelService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private errorHandlerService: ErrorhandlerService) { }
 
-  getLevels (): Observable<LevelModel[]> {
-    return this.http.get<LevelModel[]>('http://localhost:3000/levels')
+  getLevels(): Observable<LevelModel[]> {
+    return this.http.get<LevelModel[]>(apiUrl)
       .pipe(
         tap(data => console.log(data)),
-        catchError(this.handleError('getLevels', []))
+        catchError(this.errorHandlerService.handleError('getLevels', []))
       );
   }
 
-  saveLevel (level: LevelModel): Observable<LevelModel> {
-    return this.http.post<LevelModel>('http://localhost:3000/levels/post', level)
+  getLevel(id: number): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+
+    return this.http.get(url)
     .pipe(
-      tap((level: LevelModel) => console.log('level ajouté')),
-      catchError(this.handleError<LevelModel>('saveLevels'))
+      tap((level: LevelModel) => console.log(`fetched level id=${id}`)),
+      catchError(this.errorHandlerService.handleError<LevelModel>('getLevel'))
     );
   }
 
-  getLevel(id:number): Observable<any> {
-    return this.http.get('http://localhost:3000/levels/' + id)
+  saveLevel(level: LevelModel): Observable<LevelModel> {
+    return this.http.post<LevelModel>(apiUrl, level)
     .pipe(
-      tap((bikeride: LevelModel) => console.log('bikeride id')),
-      catchError(this.handleError<LevelModel>('getLevel'))
+      tap((level: LevelModel) => console.log('Level added successfully')),
+      catchError(this.errorHandlerService.handleError<LevelModel>('saveLevel'))
     );
   }
 
-  delete(id: number): Observable<void> {
-    return this.http.delete<void>('http://localhost:3000/levels/delete/' + id);
+  editLevel(id: number, level: LevelModel): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+
+   return this.http.put<LevelModel>(url, level)
+   .pipe(
+     tap(_ => console.log(`updated level id=${id}`)),
+     catchError(this.errorHandlerService.handleError<any>('editLevel'))
+   );
   }
 
-  //update(id: number, level: any ): Observable<any> {
-  //  return this.http.put<void>('http://localhost:3000/level/edit/' + id);
-  //}
+  deleteLevel(id: number): Observable<any> {
+    const url = `${apiUrl}/${id}`;
 
-  /**
-   * Handle Http operation that failed.
-   * Let the app continue.
-   * @param operation - name of the operation that failed
-   * @param result - optional value to return as the observable result
-   */
-  private handleError<T> (operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-      // TODO: better job of transforming error for user consumption
-      console.log(`${operation} failed: ${error.message}`);
-      // Let the app keep running by returning an empty result.
-      return (error);
-    };
+    return this.http.delete<any>(url).pipe(
+      tap(_ => console.log(`deleted level id=${id}`)),
+      catchError(this.errorHandlerService.handleError<any>('deleteLevel'))
+    );
   }
 } 
 

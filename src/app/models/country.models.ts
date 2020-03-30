@@ -1,10 +1,11 @@
 export class CityModel {
     id?: number;
     name: string = '';
-    stateCode: string ='';
-    countryCode: string ='';
-    latitude: number;
-    longitude: number;
+    iso3: string ='';
+    iso2: string ='';
+    phonecode: string ='';
+    capital: string ='';
+    currency: string ='';
     flag: number;
     wikiDataId: string ='';
     createdAt: Date = new Date();
