@@ -29,7 +29,12 @@ import { ListTypeComponent } from './Type/list-type/list-type.component';
 import { ListCityComponent } from './City/list-city/list-city.component';
 import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
+<<<<<<< HEAD
 import { ContactFormComponent } from './Core/contact-form/contact-form.component';
+=======
+import { DetailsBaladeComponent } from './pages/details-balade/details-balade.component';
+import { ToggleBoxComponent } from './elements/toggle-box/toggle-box.component';
+>>>>>>> development
 
 @NgModule({
   declarations: [
@@ -56,7 +61,12 @@ import { ContactFormComponent } from './Core/contact-form/contact-form.component
     ListCityComponent,
     LoginComponent,
     RegisterComponent,
+<<<<<<< HEAD
     ContactFormComponent,
+=======
+    DetailsBaladeComponent,
+    ToggleBoxComponent,
+>>>>>>> development
   ],
   imports: [
     BrowserModule,
