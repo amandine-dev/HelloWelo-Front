@@ -4,6 +4,8 @@ import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@ang
 import { Router } from '@angular/router';
 import { AddbikerideService } from 'src/app/services/addbikeride.service';
 import { BikerideModel } from 'src/app/models/bikeride.models'
+import { CscService } from 'src/app/services/csc.service';
+import { isNgTemplate } from '@angular/compiler';
 
 @Component({
   selector: 'app-add-bikeride',
@@ -12,35 +14,82 @@ import { BikerideModel } from 'src/app/models/bikeride.models'
 })
 export class AddBikerideComponent implements OnInit {
   form: FormGroup;
-  //à retirer et remplacer par services - bdd //
-  bikerides = [];
+
+  countries = [];
+  states = [];
   cities = [];
+  bikeRides = [];
   levels = [];
-  types = []
+  types = [];
   
-
-
   constructor(
     private formBuilder: FormBuilder,
     private addbikerideService: AddbikerideService,
-    private router: Router
+    private router: Router,
+    private cscService: CscService,
+    private levelService: LevelService
   ) { }
 
   
   ngOnInit(): void {
+    this.getCountries();
+    this.getLevels();    
+
     this.form = this.formBuilder.group({
       title: new FormControl(''),
       date: new FormControl (''),
       time: new FormControl (''),
-      numberkm: new FormControl (''),
+      numberKm: new FormControl (''),
       description: new FormControl (''),
-      cityId: new FormArray ([]),
-      meetingpoint: new FormControl (''),
+      meetingPoint: new FormControl (''),
+      itinerary: new FormControl (''),
       numberMaxParticipants: new FormControl (''),
-      rideTypeId: new FormArray ([]),
-      rideLevelId: new FormArray ([]),
-      rideStatusId: new FormArray ([]),
+      // RideTypeId: new FormControl(''),
+      RideLevelId: new FormControl(''),
+      RideStatusId: new FormControl(''),
+      CountryId: new FormControl(''),
+      StateId: new FormControl(''),
+      CityId: new FormControl(''),
     });
+  }
+
+  getCountries() {
+    this.cscService.getCountries()
+      .subscribe(data => {
+        this.countries = data;
+    });
+  }
+
+  getLevels() {
+    this.levelService.getLevels()
+      .subscribe(data => {
+        this.levels = data;
+      });
+  }
+
+  onChangeCountry(countryId: number) {
+    if (countryId) {
+      this.cscService.getStates(countryId).subscribe(
+        data => {
+          this.states = data;
+          this.cities = null;
+        }
+      );
+    } else {
+      this.states = null;
+      this.cities = null;
+    }
+  }
+
+  onChangeState(stateId: number) {
+    if (stateId) {
+      this.cscService.getCities(stateId).subscribe(
+        data => {
+          this.cities = data;
+        });
+    } else {
+      this.cities = null;
+    }
   }
 
 
@@ -48,20 +97,20 @@ export class AddBikerideComponent implements OnInit {
     if (this.form.valid) {
       const bikeride = this.form.value as BikerideModel;
 
-      this.addbikerideService.saveBikerides(bikeride)
+      this.form.value.RideStatusId = 1;
+
+      console.log(bikeride);
+
+      this.addbikerideService.saveBikeride(bikeride)
         .subscribe(
           (data: BikerideModel) => {
-            this.router.navigate(['/bikerides']);
+            this.router.navigate(['/les-sorties']);
           },
           (err: Error) => console.log(err),
-          () => console.log('Request has completed')
+          () => console.log('Request completed')
         );
       console.log(this.form.value);
     }
   }
 
- //onChange() 
- //{
- //alert('pour les country, state, city onChange pour changer les states en fonction du pays choisit');
- //}
 }

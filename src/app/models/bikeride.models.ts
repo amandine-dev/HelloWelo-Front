@@ -5,13 +5,13 @@ export class BikerideModel {
     time: Date = new Date();
     numberkm: number;
     description: string = '';
+    meetingPoint: string = '';
     itinerary: string =''
-    cityId: string = '';
-    meetingpoint: string = '';
     numberMaxParticipants: number;
     rideTypeId: number;
     rideLevelId: number;
     rideStatusId: number;
+    cityId: string = '';
     createdAt: Date = new Date();
     updatedAt: Date = new Date();
 }

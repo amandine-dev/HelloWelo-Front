@@ -7,6 +7,7 @@ export class UserModel {
     email: string = '';
     password: string = '';
     cityId: number;
+    roleId : number;
     createdAt: Date = new Date();
     updatedAt: Date = new Date();
 }
