@@ -23,7 +23,8 @@ html, body { height: 100%; }
 }
 
 .container-user {
-  margin: 60px;
+  display:flex;
+  flex-direction: row;
 }
  
 //boutons//
