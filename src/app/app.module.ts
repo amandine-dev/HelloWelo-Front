@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AddBikerideComponent } from './elements/add-bikeride/add-bikeride.component';
@@ -28,9 +29,8 @@ import { ListTypeComponent } from './Type/list-type/list-type.component';
 import { ListCityComponent } from './City/list-city/list-city.component';
 import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
-import { DetailsBaladeComponent } from './pages/details-balade/details-balade.component';
-import { ToggleBoxComponent } from './elements/toggle-box/toggle-box.component';
-import { ContactFormComponent } from './Core/contact-form/contact-form.component';
+import { BikerideSearchResultComponent } from './elements/bikeride-search-result/bikeride-search-result.component';
+import { SearchResultsComponent } from './pages/search-results/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -57,9 +57,8 @@ import { ContactFormComponent } from './Core/contact-form/contact-form.component
     ListCityComponent,
     LoginComponent,
     RegisterComponent,
-    DetailsBaladeComponent,
-    ToggleBoxComponent,
-    ContactFormComponent,
+    BikerideSearchResultComponent,
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,

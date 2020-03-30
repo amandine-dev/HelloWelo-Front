@@ -1,38 +1,37 @@
-    <div class="btn">
-        <div class="btn">
-            <button [routerLink]="'/proposer-une-balade'" class="btn btn1 btnorange"><span class="btnnoir">Pr</span><span class="btnorange">O</span><span class="btnnoir">p</span><span class="btnorange">O</span><span class="btnnoir">ser une balade</span>
-                 </button>
-            </div>
-            <div class="btn">
-                 <button [routerLink]="'/'" class="btn btn1 btnvert"><span class="btnnoir">N</span><span class="btnvert">O</span><span class="btnnoir space">uvelle recherche</span>
-                </button>
-        </div>
+<div class="container">
+    <div class="list">
+        <ul class="list-group list-group-horizontal-lg" *ngFor="let bikeride of bikerides">
+            <li class="list-group-item d-flex align-items-center justify-content-between">{{ bikeride.date }}</li>
+            <li class="list-group-item d-flex align-items-center justify-content-between">{{ bikeride.title }}</li>
+            <li class="list-group-item d-flex align-items-center justify-content-between">{{ bikeride.time }}</li>
+            <li class="list-group-item d-flex align-items-center justify-content-between">{{ bikeride.description }}</li>
+            <li class="list-group-item d-flex align-items-center justify-content-between">{{ bikeride.level }}</li>
+            <li class="list-group-item d-flex align-items-center justify-content-between">{{ bikeride.km }}</li>
+          </ul>
     </div>
-   
+
     <div class="container">
-        <div>
+        <div class="list">
             <ul class="list-group list-group-horinzontal-lg" *ngFor="let bikeride of bikerides">
-                <li class="list-group-item d-flex justify-content-between align-items-md-baseline align-items-left">
-                    <span>{{ bikeride.date }}</span>
-                    <span>{{ bikeride.title }}</span>
-                    <span>{{ bikeride.city }}</span>
-                    <span>{{ bikeride.time }}</span>
-                    <span>{{ bikeride.numberkm }}</span>
-                    <div class="btn btn-list">
-                        <div class="btn btn-list">
-                            <button [routerLink]="'/bikerides/id'" class="btn btn1 btnorange btn-sm"><span class="btnnoir">Plus d'inf</span><span class="btnorange">O</span><span class="btnnoir">s</span>
-                               </button>
-                          </div>
-                          <div class="btn-list">
-                               <button [routerLink]="'/'" class="btn btn1 btnvert btn-sm"><span class="btnnoir">J'y g</span><span class="btnvert">O</span>
-                              </button>
-                          </div>
-                    </div>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <h5>{{ bikeride.date }}</h5>
+                    <h5 class="badge badgeyear badge-success">{{ bikeride.title }}</h5>
+                    <h5 class="badge badgeyear badge-success">{{ bikeride.time }}</h5>
+                    <h5 class="badge badgeyear badge-success">{{ bikeride.description }}</h5>
+                    <h5 class="badge badgeyear badge-success">{{ bikeride.km }}</h5>
                 </li>
             </ul> 
         </div>
-
-
-        
-
     
+
+    <div class="btn">
+        <div class="btn">
+          <button [routerLink]="'/proposer-une-balade'" class="btn btn1 btnorange"><span class="btnnoir">Pr</span><span class="btnorange">O</span><span class="btnnoir">p</span><span class="btnorange">O</span><span class="btnnoir">ser une balade</span>
+             </button>
+        </div>
+        <div class="btn">
+             <button [routerLink]="'/'" class="btn btn1 btnvert"><span class="btnnoir">N</span><span class="btnvert">O</span><span class="btnnoir space">uvelle recherche</span>
+            </button>
+        </div>
+    </div>
+</div>
