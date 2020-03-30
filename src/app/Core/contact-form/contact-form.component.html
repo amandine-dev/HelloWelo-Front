@@ -4,18 +4,18 @@
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
         <div class="form-group">
-            <label for="name">Prénom & Nom</label>
-            <input type="text" name="name" formControlName="name" class="form-control" placeholder="Bruce Wayne">
+            <label for="username">Prénom & Nom</label>
+            <input type="text" name="username" formControlName="username" class="form-control" placeholder="Bruce Wayne">
         </div>
 
         <div class="form-group">
-            <label for="email">Adresse email</label>
-            <input type="email" name="email" formControlName="email" class="form-control" placeholder="batman@gotham.net">
+            <label for="usermail">Adresse email</label>
+            <input type="usermail" name="email" formControlName="usermail" class="form-control" placeholder="batman@gotham.net">
         </div>
 
         <div class="form-group">
-            <label for="content">Votre message</label>
-            <textarea name="content" formControlName="content" class="form-control" placeholder="Questions, remarques, idées..."></textarea>
+            <label for="message">Votre message</label>
+            <textarea name="message" formControlName="message" class="form-control" placeholder="Questions, remarques, idées..."></textarea>
         </div>
 
         <div class="btn">
