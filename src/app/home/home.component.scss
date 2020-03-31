@@ -1,11 +1,11 @@
 .fond {
     margin: 0;
     padding: 0;
+    background-position-y: 100px;
+    background-position-x: center;
     background: url("/assets/backgroundimage.jpg") no-repeat;
     background-attachment: scroll;
     background-size: cover;
-    
-    top:0;
 
     /* version standardisée */
     min-height: 100vh;
