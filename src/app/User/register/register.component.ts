@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/models/user.models';
 import { UserService } from 'src/app/services/user.service';
@@ -12,6 +12,7 @@ import { CityService } from 'src/app/services/city.service';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+
   form: FormGroup;
   cities = [];
 
@@ -25,13 +26,13 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      lastName: ['', [Validators.required, Validators.maxLength(20)]],
-      firstName: ['', [Validators.required, Validators.maxLength(20)]],
-      nickName: ['', [Validators.required, Validators.maxLength(20)]],
-      birthday: ['', Validators.pattern('^([0-9]{4})(-[0-9]{2}){2}$')],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
-      cityId: this.getCities()
+      firstName: new FormControl(),
+      lastName:  new FormControl(),
+      nickName: new FormControl(),
+      birthday: new FormControl(),
+      email: new FormControl(),
+      password: new FormControl(),
+      CityId: this.getCities()
     });
   }
 
