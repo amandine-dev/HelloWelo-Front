@@ -10,6 +10,7 @@ import { AddLevelComponent } from './Level/add-level/add-level.component';
 import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
 import { DetailsBaladeComponent } from './pages/details-balade/details-balade.component';
+import { SearchResultsComponent } from './pages/search-results/search-results.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,12 @@ const routes: Routes = [
   { path:'level', component: AddLevelComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
+<<<<<<< HEAD
   {path: 'balade/:id', component: DetailsBaladeComponent}
+=======
+  {path: 'balade/:id', component: DetailsBaladeComponent},
+  {path: 'search-results', component: SearchResultsComponent}
+>>>>>>> maria
 ];
 
 @NgModule({

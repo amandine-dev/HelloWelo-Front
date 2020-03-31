@@ -31,6 +31,8 @@ import { RegisterComponent } from './User/register/register.component';
 import { DetailsBaladeComponent } from './pages/details-balade/details-balade.component';
 import { ToggleBoxComponent } from './elements/toggle-box/toggle-box.component';
 import { ContactFormComponent } from './Core/contact-form/contact-form.component';
+import { BikerideSearchResultComponent } from './elements/bikeride-search-result/bikeride-search-result.component';
+import { SearchResultsComponent } from './pages/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { ContactFormComponent } from './Core/contact-form/contact-form.component
     DetailsBaladeComponent,
     ToggleBoxComponent,
     ContactFormComponent,
+    BikerideSearchResultComponent,
+    SearchResultsComponent,
   ],
   imports: [
     BrowserModule,
