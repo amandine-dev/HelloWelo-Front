@@ -1,5 +1,5 @@
 import { AuthService } from './../../services/auth.service';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/models/user.models';
@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      email: ['', Validators.email],
-      password: ['', Validators.pattern('[a-zA-Z0-9!$@#]{6,20}')],
+      usermail: new FormControl(),
+      userpassword: new FormControl(),
     });
   }
   onSubmit() {

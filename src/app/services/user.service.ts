@@ -13,7 +13,7 @@ export class UserService {
   ) { }
 
   save(user: UserModel): Observable<UserModel> {
-    return this.http.post<UserModel>('http://localhost:3000/users', user);
+    return this.http.post<UserModel>('http://localhost:3000/users/signin', user);
   }
 
 }
