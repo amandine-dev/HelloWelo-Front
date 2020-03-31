@@ -1,11 +1,7 @@
-import { CityService } from 'src/app/services/city.service';
 import { Component, OnInit } from '@angular/core';
-import { AddbikerideService } from 'src/app/services/addbikeride.service';
-import { LevelService } from 'src/app/services/level.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { CityModel } from 'src/app/models/city.models';
-import { LevelModel } from 'src/app/models/level.models';
 import { BikerideModel } from 'src/app/models/bikeride.models';
+import { AddbikerideService } from 'src/app/services/addbikeride.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-bikeride',
@@ -14,14 +10,15 @@ import { BikerideModel } from 'src/app/models/bikeride.models';
 })
 export class BikerideComponent implements OnInit {
   
-  bikeride: BikerideModel []
+  bikeride: BikerideModel
   
-  isLoadingResults = true;
+  isLoadingResults = false;
 
   constructor(
     private route: ActivatedRoute, 
-    private addbikeride: AddbikerideService, 
-    private router: Router) { }
+    private addbikeride :AddbikerideService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
     console.log(this.route.snapshot.params['id']);
@@ -33,7 +30,7 @@ export class BikerideComponent implements OnInit {
       .subscribe(data => {
         this.bikeride = data;
         console.log(this.bikeride);
-        this.isLoadingResults = false;
+        this.isLoadingResults = true;
       });
   }
 
