@@ -1,7 +1,12 @@
 export class CityModel {
     id?: number;
     name: string = '';
-    code: number;
+    stateCode: string ='';
+    countryCode: string ='';
+    latitude: number;
+    longitude: number;
+    flag: number;
+    wikiDataId: string ='';
     createdAt: Date = new Date();
     updatedAt: Date = new Date();
 }

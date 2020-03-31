@@ -1,0 +1,54 @@
+p {
+    text-align: justify;
+}
+
+h2 {
+    text-align: center;
+}
+
+.grid-container {
+    margin: 3% 6% 6%;
+}
+
+.presentation {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.titre {
+    width: 100%;
+    text-align: center;
+}
+
+.column {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pres {
+    margin: 30px;
+}
+
+.message {
+    width: 100%;
+    margin: 30px;
+}
+
+.team {
+    display: flex;
+    align-content: space-between;
+    margin-top: 3%;
+}
+
+.welos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 3%;
+}
