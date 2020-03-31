@@ -1,0 +1,89 @@
+footer {
+    background-color: #E8E8EB;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h2 {
+    padding: 2% 5% 1%;
+    margin: 0;
+}
+
+.title {
+    padding-left: 6%;
+}
+
+.footer-menu {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 3%;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.liens {
+    display: flex;
+    justify-content: space-around;
+    padding-right: 20%;
+}
+.newsletter {
+    width: 35%;
+}
+
+.reseaux {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.picto {
+    display: flex;
+    justify-content: center;
+    padding: 0 5px;
+}
+
+  
+
+.btn1 {
+    color: black;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(149, 193, 31);
+    text-align: center;
+    padding: 3px 10px;
+    text-decoration: none
+  }
+  
+  .btn1:hover {
+    background: #FFFFFF;
+    box-shadow: 0 2px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 1px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .btnvert {
+    color: rgb(149, 193, 31);
+}
+  
+.btnnoir {
+    color: black;
+}
+
+.footer-copyright {
+  padding: 20px;
+  border-top: 1px solid #00000080;
+  font-size: 100%;
+  text-align: center;
+  font-weight: 100;
+}
