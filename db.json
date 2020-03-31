@@ -1,0 +1,70 @@
+{
+  "bikerides": [
+    {
+      "title": "Canal Lachine",
+      "city": "Lille",
+      "state": "Nord",
+      "country": "France",
+      "meetingpoint": "devant le marché Atwater",
+      "numberkm": "4",
+      "description": "beau",
+      "nbparticipants": "5",
+      "level": "3",
+      "id": 1
+    },
+    {
+      "title": "Le long du canal Lachine",
+      "date": "",
+      "time": "",
+      "city": "",
+      "state": "",
+      "country": "",
+      "meetingpoint": "devant le marché Atwater",
+      "numberkm": 5,
+      "description": "super balade la bas, ",
+      "nbparticipants": "",
+      "level": "",
+      "id": 2
+    },
+    {
+      "title": "Book store",
+      "city": "Lille",
+      "state": "Nord",
+      "country": "France",
+      "meetingpoint": "au pont",
+      "numberkm": "4",
+      "description": "tranquille",
+      "nbparticipants": "5",
+      "level": "3",
+      "id": 3
+    },
+    {
+      "title": "Lille - Lambersart",
+      "date": "2020-03-13",
+      "time": "",
+      "numberkm": 5,
+      "description": "jklmùlkjimhulgyftdrt hbjkn",
+      "cityId": [],
+      "meetingpoint": "au pied du pont ",
+      "numberMaxParticipants": 10,
+      "rideTypeId": [],
+      "rideLevelId": [],
+      "rideStatusId": [],
+      "id": 4
+    },
+    {
+      "title": "Le long de la cote bretonne",
+      "date": "2020-05-07",
+      "time": "09:00",
+      "numberkm": 100,
+      "description": "Coucou nous allons suivre les côtes Bretonnes",
+      "cityId": [],
+      "meetingpoint": "Morlaix",
+      "numberMaxParticipants": 15,
+      "rideTypeId": [],
+      "rideLevelId": [],
+      "rideStatusId": [],
+      "id": 5
+    }
+  ]
+}

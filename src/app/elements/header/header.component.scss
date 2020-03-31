@@ -2,7 +2,6 @@
     height: 240px;
     background-image: url("/assets/backgroundimage.jpg");
     background-repeat: no-repeat;
-    -webkit-background-size: cover; /* pour anciens Chrome et Safari */
     background-size: cover; /* version standardisée */ 
     background-attachment: scroll;
     background-position-y: 20%;
@@ -15,13 +14,8 @@
 
  }
 
- .position{
-  margin: 0 0 0 20%;  
-}
+ 
 
-.position2{
-  margin: 0 20px 0 20px;  
-}
  
   
  

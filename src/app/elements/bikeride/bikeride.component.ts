@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BikerideModel } from 'src/app/models/bikeride.models';
 import { AddbikerideService } from 'src/app/services/addbikeride.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-bikeride',
@@ -15,11 +15,14 @@ export class BikerideComponent implements OnInit {
   isLoadingResults = false;
 
   constructor(
+    private route: ActivatedRoute, 
     private addbikeride :AddbikerideService,
     private router: Router
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    console.log(this.route.snapshot.params['id']);
+    this.getBikeride(this.route.snapshot.params['id']);
   }
 
   getBikeride(id) {
