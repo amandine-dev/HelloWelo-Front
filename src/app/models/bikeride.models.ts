@@ -3,7 +3,7 @@ export class BikerideModel {
     title: string = '';
     date: Date = new Date();
     time: Date = new Date();
-    numberkm: number;
+    numberKm: number;
     description: string = '';
     meetingPoint: string = '';
     itinerary: string =''

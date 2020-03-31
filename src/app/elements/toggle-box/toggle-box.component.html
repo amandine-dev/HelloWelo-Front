@@ -1,5 +1,5 @@
-<div>
-    <h2 class="toggle-box-title" (click)="state=!state">{{ title }}</h2>
+<div class="toggle-box">
+    <img src="../../../assets/picto/bike.svg" width="30" height="30" class="picto d-inline-block align-top" alt=""><h2 class="toggle-box-title" (click)="state=!state">{{ title }}</h2>
     <div [hidden]="state">
         <ng-content></ng-content>
     </div>

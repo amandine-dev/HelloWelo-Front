@@ -14,9 +14,9 @@ import { BikerideModel } from 'src/app/models/bikeride.models';
 })
 export class BikerideComponent implements OnInit {
   
-  bikeride: BikerideModel []
+  bikeride: BikerideModel
   
-  isLoadingResults = true;
+  isLoadingResults = false;
 
   constructor(
     private route: ActivatedRoute, 
@@ -33,7 +33,7 @@ export class BikerideComponent implements OnInit {
       .subscribe(data => {
         this.bikeride = data;
         console.log(this.bikeride);
-        this.isLoadingResults = false;
+        this.isLoadingResults = true;
       });
   }
 

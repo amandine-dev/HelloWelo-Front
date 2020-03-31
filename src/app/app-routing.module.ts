@@ -23,7 +23,7 @@ const routes: Routes = [
   { path:'level', component: AddLevelComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'bikerides', component: DetailsBaladeComponent}
+  {path: 'balade/:id', component: DetailsBaladeComponent}
 ];
 
 @NgModule({
