@@ -23,12 +23,8 @@ const routes: Routes = [
   { path:'level', component: AddLevelComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-<<<<<<< HEAD
-  {path: 'balade/:id', component: DetailsBaladeComponent}
-=======
   {path: 'balade/:id', component: DetailsBaladeComponent},
   {path: 'search-results', component: SearchResultsComponent}
->>>>>>> maria
 ];
 
 @NgModule({
