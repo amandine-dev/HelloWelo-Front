@@ -1,12 +1,32 @@
-<div>
-    <nav class="nav mb-3">
-        <a class="nav-button" [routerLinkActive]="['active']" [routerLink]="['/les-sorties']"><img class="picto" src = "assets/picto/bike.svg" />Les sorties</a>
-        <a class="nav-button" [routerLinkActive]="['active']" [routerLink]="['/proposer-une-balade']" ><img class="picto" src = "assets/picto/plus.svg" />Proposer une balade</a>
-        <a class="nav-button" [routerLinkActive]="['active']" [routerLink]="['/contact']" ><img class="picto" src = "assets/picto/contact.svg" />Contact</a>
-        <a class="nav-button" [routerLinkActive]="['active']" [routerLink]="['/mon-espace']" ><img class="picto" src = "assets/picto/espace.svg" />Mon espace</a>
-        <a class="nav-button" [routerLinkActive]="['active']" [routerLink]="['/connexion']" ><img class="picto" src = "assets/picto/wheel.svg" />Connexion</a>
-    </nav>   
-</div>
-
-
-
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="navTrigger" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" >
+    <span (click)="toggleNavbar()">
+        <i [routerLink]="['/']"></i>
+        <i [routerLink]="['/']"></i>
+        <i [routerLink]="['/']"></i>  
+    </span>
+    </div>
+   
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <div class="nav" [routerLink]="['/les-sorties']"><img src="../../../assets/picto/bike.svg" width="30" height="30" class="picto d-inline-block align-top" alt=""> Les sorties</div>
+        </li>
+        <li class="nav-item">
+          <div class="nav" [routerLink]="['/proposer-une-balade']"><img src="../../../assets/picto/plus.svg" width="15" height="30" class="picto d-inline-block align-top" alt=""> Proposer une balade</div>
+        </li>
+        <li class="nav-item">
+          <div class="nav" [routerLink]="['/contact']"><img src="../../../assets/picto/contact.svg" width="15" height="10" class="picto d-inline-block align-top" alt=""> Concept</div>
+        </li>
+        <li class="nav-item">
+          <div class="nav" [routerLink]="['/mon-espace']"><img src="../../../assets/picto/espace.svg" width="15" height="30" class="picto d-inline-block align-top" alt=""> Mon espace</div>
+        </li>
+        <li class="nav-item" *ngIf="!authService.user">
+          <div class="nav" [routerLink]="['/connexion']"><img src="../../../assets/picto/wheel.svg" width="15" height="30" class="picto d-inline-block align-top" alt=""> Connexion</div>
+        </li>
+        <li class="nav-item"  *ngIf="authService.user"  (click)="onLogout()">
+          <div class="nav-link active" [routerLink]="['/']"><img src="../../../assets/picto/wheel.svg" width="15" height="30" class="picto d-inline-block align-top" alt=""> Déconnexion</div>
+        </li>
+    </ul>
+    </div>
+</nav>
