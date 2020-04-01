@@ -11,6 +11,10 @@ import { CityService } from 'src/app/services/city.service';
 })
 export class BikerideSearchResultComponent implements OnInit {
   bikerides: BikerideModel[];
+  bikeRidesByCity: any;
+  bikeRidesByState: any;
+  bikeRidesByDate: any;
+
   // cityId:any;
   // city: any;
 
@@ -21,8 +25,14 @@ export class BikerideSearchResultComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.bikerides = this.searchBikerideService.getBikeRidesByCityResult();
-    console.log(this.bikerides);
+
+      this.bikerides = this.searchBikerideService.getBikeRidesByCityResult();
+      console.log(this.bikerides);
+      this.bikerides = this.searchBikerideService.getBikeRidesByStateResult();
+      console.log(this.bikerides);
+      this.bikerides = this.searchBikerideService.getBikeRidesByDateResult();
+      console.log(this.bikerides);
+
     // this.cityId = this.bikerides[].cityId;
     // this.city = this.cityService.getCity(this.bikerides.CityId);
   }
