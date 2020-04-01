@@ -1,4 +1,42 @@
+.container{
+    gap: 20px;
+}
+.datetime {
+    display: flex;
+    flex-direction: row;
+    
+}
+
 .buttonstyle {
     border-color: grey;
     border:2px
 }
+
+.round-style {
+    background-color: white;
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    border-color: lightgrey;
+    margin: 20 30 020 30;   
+}
+
+.coltext {
+    font-weight: 500;
+    text-align: justify;
+    gap: 20px
+
+}
+
+.coltext-description {
+    text-align: justify;
+}
+
+
+.description{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+

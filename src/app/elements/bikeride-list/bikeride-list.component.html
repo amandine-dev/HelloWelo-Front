@@ -12,12 +12,12 @@
     <div class="container">
         <div>
             <ul class="list-group list-group-horinzontal-lg" *ngFor="let bikeride of bikerides">
-                <li class="list-group-item d-flex justify-content-between align-items-md-baseline align-items-left">
-                    <span>{{ bikeride.date | date: 'dd/MM/yyyy'}}</span>
-                    <span>{{ bikeride.title }}</span>
-                    <span>{{ bikeride.city }}</span>
-                    <span>{{ bikeride.time }}</span>
-                    <span>{{ bikeride.numberKm }}</span>
+                <li class="list-group-item d-flex justify-content-between align-items-left">
+                    <span class="list-date">{{ bikeride.date | date: 'dd/MM/yyyy'}}</span>
+                    <span class="list-title">{{ bikeride.title }}</span>
+                    <span class="list-city">{{ bikeride.city }}</span>
+                    <span class="list-time">{{ bikeride.time }}</span>
+                    <span class="list-km">{{ bikeride.numberKm }}</span>
                     <div class="btn btn-list">
                         <div class="btn btn-list">
                             <button [routerLink]="['/balade',bikeride.id]" class="btn btn1 btnorange btn-sm"><span class="btnnoir">Plus d'inf</span><span class="btnorange">O</span><span class="btnnoir">s</span>
