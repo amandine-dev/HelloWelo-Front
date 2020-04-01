@@ -17,6 +17,7 @@ interface UserAuth {
 export class AuthService {
   private userSubject: BehaviorSubject<UserModel>;
   private user$: Observable<UserModel>
+  private loginUrl = 'http://localhost:3000/users/login';
 
   constructor(private http: HttpClient) {
     this.userSubject = new BehaviorSubject<UserModel>(null);
@@ -32,14 +33,18 @@ export class AuthService {
 
   // this.authService.user
   // value === UserModel | null
-  get user(): UserModel {
+  public get user(): UserModel {
     return this.userSubject.value;
   }
 
-  login(email: string, password: string): Observable<UserModel> {
+  public getToken() {
+    return localStorage.getItem('user_token');
+  }
+
+  public login(email: string, password: string): Observable<UserModel> {
     const value = { email: email, password: password };
 
-    return this.http.post<UserAuth>('/users/login', value)
+    return this.http.post<UserAuth>(this.loginUrl, value)
       .pipe(
         tap((data: UserAuth) => console.log(data))
       )

@@ -19,12 +19,15 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
-      usermail: new FormControl(),
-      userpassword: new FormControl(),
-    });
+    this.form = new FormGroup({
+      email: new FormControl('', Validators.compose([])),
+      password: new FormControl('', Validators.compose([])),
+    })
   }
+
   onSubmit() {
+    console.log(this.form.valid);
+
     if (this.form.valid) {
       this.authService.login(
         this.form.value.email,
