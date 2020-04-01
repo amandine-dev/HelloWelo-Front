@@ -6,7 +6,7 @@
                     style</span></button>
 
             <div class="form-group column">
-                <label for="titrebalade">Titre de la balade</label>
+                <label for="titrebalade">Titre de la balade*</label>
                 <input formControlName="title" type="text" class="form-control" id="titrebalade"
                     placeholder="ex: Balade le long du canal Lachine" required>
             </div>
@@ -14,41 +14,44 @@
         <div>
             <div class="columns">
                 <div class="form-group column">
-                    <label for="date">Date</label>
+                    <label for="date">Date*</label>
                     <input formControlName="date" id="date" class="input" type="date" data-display-mode="inline"
                         value="09/25/2018">
                 </div>
                 <div class="form-group column">
-                    <label for="time">Horaire</label>
+                    <label for="time">Horaire*</label>
                     <input formControlName="time" id="time" class="input" type="time" data-display-mode="inline">
                 </div>
                 <div class="form-group column">
-                    <label for="km">Km</label>
+                    <label for="km">Km*</label>
                     <input formControlName="numberKm" type="number" class="form-control" id="km" name="km" maxlength="5"
                         placeholder="min. 1km" required>
                 </div>
             </div>
         </div>
         <div class="form-group">
+            <label for="km">Pays*</label>
             <select formControlName="CountryId" class="form-control" (change)="onChangeCountry($event.target.value)">
                 <option value="">Pays</option>
                 <option *ngFor="let country of countries" value={{country.id}}>{{country.name}}</option>
             </select>
         </div>
         <div class="form-group">
+            <label for="km">Région*</label>
             <select formControlName="StateId" class="form-control" (change)="onChangeState($event.target.value)">
                 <option value="">Région</option>
                 <option *ngFor="let state of states" value={{state.id}}>{{state.name}}</option>
             </select>
         </div>
         <div class="form-group">
+            <label for="km">Ville*</label>
             <select formControlName="CityId" class="form-control">
                 <option value="">Ville</option>
                 <option *ngFor="let city of cities" value={{city.id}}>{{city.name}}</option>
             </select>
         </div>
         <div class="form-group">
-            <label for="meetingPoint">Lieu de rendez-vous</label>
+            <label for="meetingPoint">Lieu de rendez-vous*</label>
             <input formControlName="meetingPoint" type="text" class="form-control" id="meetingPoint" name="meetingPoint"
                 placeholder="ex: au croisement de..." required>
         </div>
