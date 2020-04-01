@@ -1,5 +1,15 @@
 .toggle-box-title {
     cursor: pointer;
     vertical-align: middle;
+    margin-bottom: 0;
 }
 
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 1em 0px;
+}
+
+.toggle-box {
+    width: 500px;
+}
