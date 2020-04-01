@@ -1,6 +1,14 @@
-.btn{
-    flex-wrap: wrap;
-}
+.btn { 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end; 
+   }
+    
+   .btn-list{
+    padding-left: 10px;;
+    font-size: 12px;
+   }
 
 .list-group-item{
     display: inline-block;
