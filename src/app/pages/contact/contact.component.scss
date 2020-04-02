@@ -47,8 +47,43 @@ h2 {
     align-items: center;
 }
 
+.welos > img {
+    width: 50%;
+}
+
 .contact {
     display: flex;
     justify-content: center;
     margin-top: 3%;
 }
+
+@media screen and (max-width: 994px) {
+
+    .grid-container {
+        margin: 1%;
+    }
+
+    .column {
+        flex-direction: column;
+    }
+
+    .pres {
+        margin-top: 5px;
+    }
+
+    .message {
+        margin: 5px;
+    }
+
+    .team {
+        flex-direction: column;
+    }
+
+    .welos {
+        width: 100%;
+    }
+
+    .welos > img {
+        width: 20%;
+    }
+  }
