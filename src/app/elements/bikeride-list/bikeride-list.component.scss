@@ -22,7 +22,19 @@
 }
 .list-title{
   white-space: nowrap; 
-  width: 350px; 
+  width: 20%; 
   overflow: hidden;
   text-overflow: ellipsis; 
+}
+
+@media screen and (max-width: 994px) {
+
+    .list-group-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list-title {
+        width: 100%;
+    }
 }
