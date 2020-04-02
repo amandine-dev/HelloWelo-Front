@@ -1,6 +1,14 @@
-.btn{
-    flex-wrap: wrap;
-}
+.btn { 
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end; 
+   }
+    
+   .btn-list{
+    padding-left: 10px;;
+    font-size: 12px;
+   }
 
 .list-group-item{
     display: inline-block;
@@ -14,7 +22,19 @@
 }
 .list-title{
   white-space: nowrap; 
-  width: 350px; 
+  width: 20%; 
   overflow: hidden;
   text-overflow: ellipsis; 
+}
+
+@media screen and (max-width: 994px) {
+
+    .list-group-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .list-title {
+        width: 100%;
+    }
 }

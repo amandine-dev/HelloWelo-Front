@@ -24,6 +24,9 @@
     margin: 0 20px 0 20px;  
   }
 
-  
-
+@media screen and (max-width: 768px) {
+  .is-two-thirds-tablet {
+    margin: 0;
+  }
+}
   
