@@ -18,7 +18,7 @@
     width: 160px;
     height: 160px;
     border-color: lightgrey;
-    margin: 20 30 020 30;   
+    margin: 20px 30px 20px 30px;   
 }
 
 .coltext {
@@ -38,5 +38,15 @@
     margin-bottom: 20px;
 }
 
+@media screen and (max-width: 994px) {
+    .illustration{
+        display: flex;
+        justify-content: center;
+        flex-grow: 0;
+    }
 
-
+    .illustration > img {
+        width: 30%;
+        height: 30%;
+    }
+}
