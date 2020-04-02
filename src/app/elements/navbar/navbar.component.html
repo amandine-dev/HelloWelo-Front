@@ -1,50 +1,73 @@
-<nav class="navbar navbar-expand-lg navbar-light">
-
-  <!--burger smartphone-->
-    <div class="navTrigger">
-      <img src="../../../assets/picto/burger.svg" class="picto d-inline-block align-top" alt="">
-
+<!--burger smartphone-->
+<ul class="navburger">
+  <li class="navbar-item burger">
+    <div class="burgernav"><img src="../../../assets/picto/burger.svg" width="50"
+      class="picto d-inline-block align-top" alt=""></div>
       <ul>
-        <li>
-          <a href="#">Sub item 1</a>
-        </li>
-        <li>
-          <a href="#">Sub item 2</a>
-        </li>
-      </ul>
-    </div>
-
-    <!--navbar ordinateur-->
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <div class="nav" [routerLink]="['/']"><img src="../../../assets/favicon.png" width="23" height="13"
+          <li>
+            <div class="nav" [routerLink]="['/']"><img src="../../../assets/favicon.png" width="23" height="13"
               class="picto d-inline-block align-top" alt="">Home</div>
-        </li>
-        <li class="nav-item">
-          <div class="nav" [routerLink]="['/les-sorties']"><img src="../../../assets/picto/bike.svg" width="30"
-              height="30" class="picto d-inline-block align-top" alt="">Les sorties</div>
-        </li>
-        <li class="nav-item">
-          <div class="nav" [routerLink]="['/proposer-une-balade']"><img src="../../../assets/picto/plus.svg" width="15"
-              height="30" class="picto d-inline-block align-top" alt="">Proposer une balade</div>
-        </li>
-        <li class="nav-item">
-          <div class="nav" [routerLink]="['/contact']"><img src="../../../assets/picto/contact.svg" width="15"
-              height="10" class="picto d-inline-block align-top" alt="">Concept</div>
-        </li>
-        <li class="nav-item">
-          <div class="nav" [routerLink]="['/mon-espace']"><img src="../../../assets/picto/espace.svg" width="15"
-              height="30" class="picto d-inline-block align-top" alt="">Mon espace</div>
-        </li>
-        <li class="nav-item" *ngIf="!authService.user">
-          <div class="nav" [routerLink]="['/connexion']"><img src="../../../assets/picto/wheel.svg" width="15"
-              height="30" class="picto d-inline-block align-top" alt="">Connexion</div>
-        </li>
-        <li class="nav-item" *ngIf="authService.user" (click)="onLogout()">
-          <div class="nav-link active" [routerLink]="['/']"><img src="../../../assets/picto/wheel.svg" width="15"
-              height="30" class="picto d-inline-block align-top" alt="">Déconnexion</div>
-        </li>
+          </li>
+          <li>
+            <div class="nav" [routerLink]="['/les-sorties']"><img src="../../../assets/picto/bike.svg" width="30"
+                height="30" class="picto d-inline-block align-top" alt="">Les sorties</div>
+          </li>
+          <li>
+            <div class="nav" [routerLink]="['/proposer-une-balade']"><img src="../../../assets/picto/plus.svg" width="15"
+                height="30" class="picto d-inline-block align-top" alt="">Proposer une balade</div>
+          </li>
+          <li>
+            <div class="nav" [routerLink]="['/contact']"><img src="../../../assets/picto/contact.svg" width="15" height="10"
+                class="picto d-inline-block align-top" alt="">Concept</div>
+          </li>
+          <li>
+            <div class="nav" [routerLink]="['/mon-espace']"><img src="../../../assets/picto/espace.svg" width="15"
+                height="30" class="picto d-inline-block align-top" alt="">Mon espace</div>
+          </li>
+          <li *ngIf="!authService.user">
+            <div class="nav" [routerLink]="['/connexion']"><img src="../../../assets/picto/wheel.svg" width="15" height="30"
+                class="picto d-inline-block align-top" alt="">Connexion</div>
+          </li>
+          <li *ngIf="authService.user" (click)="onLogout()">
+            <div class="nav-link active" [routerLink]="['/']"><img src="../../../assets/picto/wheel.svg" width="15"
+                height="30" class="picto d-inline-block align-top" alt="">Déconnexion</div>
+          </li>
       </ul>
-    </div>
+  </li>
+</ul>
+
+<!--navbar ordinateur-->
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <div class="nav" [routerLink]="['/']"><img src="../../../assets/favicon.png" width="23" height="13"
+            class="picto d-inline-block align-top" alt="">Home</div>
+      </li>
+      <li class="nav-item">
+        <div class="nav" [routerLink]="['/les-sorties']"><img src="../../../assets/picto/bike.svg" width="30"
+            height="30" class="picto d-inline-block align-top" alt="">Les sorties</div>
+      </li>
+      <li class="nav-item">
+        <div class="nav" [routerLink]="['/proposer-une-balade']"><img src="../../../assets/picto/plus.svg" width="15"
+            height="30" class="picto d-inline-block align-top" alt="">Proposer une balade</div>
+      </li>
+      <li class="nav-item">
+        <div class="nav" [routerLink]="['/contact']"><img src="../../../assets/picto/contact.svg" width="15" height="10"
+            class="picto d-inline-block align-top" alt="">Concept</div>
+      </li>
+      <li class="nav-item">
+        <div class="nav" [routerLink]="['/mon-espace']"><img src="../../../assets/picto/espace.svg" width="15"
+            height="30" class="picto d-inline-block align-top" alt="">Mon espace</div>
+      </li>
+      <li class="nav-item" *ngIf="!authService.user">
+        <div class="nav" [routerLink]="['/connexion']"><img src="../../../assets/picto/wheel.svg" width="15" height="30"
+            class="picto d-inline-block align-top" alt="">Connexion</div>
+      </li>
+      <li class="nav-item" *ngIf="authService.user" (click)="onLogout()">
+        <div class="nav-link active" [routerLink]="['/']"><img src="../../../assets/picto/wheel.svg" width="15"
+            height="30" class="picto d-inline-block align-top" alt="">Déconnexion</div>
+      </li>
+    </ul>
+  </div>
 </nav>

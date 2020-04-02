@@ -2,39 +2,47 @@
     cursor: pointer;
 }
 
-.navTrigger {
-    display :none;
+.navburger {
+    display: none;
 }
 
 @media screen and (max-width: 994px) {
+.navbar {
+    box-shadow: none;
+    padding: 0;
+}
 
-    .navTrigger {
-        display: block;
-        cursor: pointer;
-        width: 30px;
-        height: 25px;
-        margin: auto;
-        position: absolute;
-        right: 30px;
-        top: 0;
-        bottom: 0;
-        background-color: none;
-    }
+.navbar-light {
+    display: none;
+}
 
-    .navTrigger > ul {
-        background-color: #00144e49;
-        position: absolute;
-        // left: -9999px;
-        // top: -9999px;
-        // white-space: nowrap;
-        opacity: 0;
-        // transition: opacity 1s;
-    }
+.navburger {
+    display: block;
+    height: 0;
+}
+
+.burger {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.burger > ul {
+    background-color: #ffffff9f;
+    border-radius: 5px;
+    position: absolute;
+    right: -9999px;
+    top: -9999px;
+    flex-wrap: nowrap;
+    opacity: 0;
+    transition: opacity 1s;
+}
     
-    .navTrigger:hover > ul {
-        left: 0;
-        top: initial;
-        opacity: 1;
-    }
+.burger:hover > ul {
+    right: 20px;
+    top: 30px;
+    opacity: 1;
+    width: max-content;
+    z-index: 30;
+}
 
 }
