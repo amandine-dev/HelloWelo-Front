@@ -49,3 +49,10 @@
     padding-top: 20px;
     text-align: center;
   }
+
+@media screen and (max-width: 768px) {
+    
+  .form-search {
+    width: 100%;
+  }
+}
