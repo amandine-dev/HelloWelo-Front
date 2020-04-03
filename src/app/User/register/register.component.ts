@@ -1,3 +1,4 @@
+import { CscService } from 'src/app/services/csc.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,23 +16,28 @@ export class RegisterComponent implements OnInit {
 
   form: FormGroup;
   cities = [];
+  countries = [];
+  states = [];
 
-  
+
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
     private cityService: CityService,
-    private router: Router
+    private router: Router,
+    private cscService: CscService
   ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
       firstName: new FormControl(),
-      lastName:  new FormControl(),
+      lastName: new FormControl(),
       nickName: new FormControl(),
       birthday: new FormControl(),
       email: new FormControl(),
       password: new FormControl(),
+      CountryId: this.getCountries(),
+      StateId: new FormControl(),
       CityId: this.getCities()
     });
   }
@@ -42,6 +48,38 @@ export class RegisterComponent implements OnInit {
       .subscribe(data => {
         this.cities = data;
       });
+  }
+
+  getCountries() {
+    this.cscService.getCountries()
+      .subscribe(data => {
+        this.countries = data;
+      });
+  }
+
+  onChangeCountry(countryId: number) {
+    if (countryId) {
+      this.cscService.getStates(countryId).subscribe(
+        data => {
+          this.states = data;
+          this.cities = null;
+        }
+      );
+    } else {
+      this.states = null;
+      this.cities = null;
+    }
+  }
+
+  onChangeState(stateId: number) {
+    if (stateId) {
+      this.cscService.getCities(stateId).subscribe(
+        data => {
+          this.cities = data;
+        });
+    } else {
+      this.cities = null;
+    }
   }
 
   onSubmit(): void {
