@@ -33,6 +33,8 @@ export class FormSearchComponent implements OnInit {
       CityId: new FormControl(''),
       date: new FormControl('')
     });
+
+    this.searchBikerideService.init();
   }
 
   getCountries() {
@@ -70,6 +72,7 @@ export class FormSearchComponent implements OnInit {
   }
 
   onSubmit(): void {
+
     if (this.form.value.CityId && !this.form.value.date) {
     console.log(this.form.value.CityId);
     if (this.form.value.CityId) {
@@ -81,7 +84,7 @@ export class FormSearchComponent implements OnInit {
           console.log(data);
           this.searchBikerideService.setbikeRidesByCityResult(data);
 
-          this.router.navigate(['/search-results']);
+          this.router.navigate(['/search-results','city']);
         },
           (err: Error) => console.log(err),
           () => console.log('Request completed')
@@ -97,7 +100,7 @@ export class FormSearchComponent implements OnInit {
           console.log(data);
           this.searchBikerideService.setbikeRidesByStateResult(data);
 
-          this.router.navigate(['/search-results']);
+          this.router.navigate(['/search-results','state']);
         },
           (err: Error) => console.log(err),
           () => console.log('Request completed')
@@ -113,14 +116,13 @@ export class FormSearchComponent implements OnInit {
           console.log(data);
           this.searchBikerideService.setbikeRidesByDateResult(data);
 
-          this.router.navigate(['/search-results']);
+          this.router.navigate(['/search-results','date']);
         },
           (err: Error) => console.log(err),
           () => console.log('Request completed')
         );
     }
-
-
+    
     console.log(this.form.value);
   }
 
