@@ -21,7 +21,7 @@ export class AddBikerideComponent implements OnInit {
   bikeRides = [];
   levels = [];
   types = [];
-  
+
   constructor(
     private formBuilder: FormBuilder,
     private addbikerideService: AddbikerideService,
@@ -103,8 +103,9 @@ export class AddBikerideComponent implements OnInit {
 
       this.addbikerideService.saveBikeride(bikeride)
         .subscribe(
-          (data: BikerideModel) => {
-            this.router.navigate(['/les-sorties']);
+          (data: BikerideModel) => {  
+            // this.router.navigate(['/les-sorties']);
+            this.router.navigate(['/balade',data.id]);
           },
           (err: Error) => console.log(err),
           () => console.log('Request completed')

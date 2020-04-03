@@ -11,6 +11,7 @@ export class SearchBikerideService {
 
   apiBaseUrlBikeRidesByCity = 'http://localhost:3000/bikerides/city';
   apiBaseUrlBikeRidesByState = 'http://localhost:3000/bikerides/state';
+  apiBaseUrlBikeRidesByCountry = 'http://localhost:3000/bikerides/country';
   apiBaseUrlBikeRidesByDate = 'http://localhost:3000/bikerides/date';
 
 
@@ -18,6 +19,7 @@ export class SearchBikerideService {
 
   public bikeRidesByCityResult: any;
   public bikeRidesByStateResult: any;
+  public bikeRidesByCountryResult: any;
   public bikeRidesByDateResult: any;
 
   getBikeRidesByCity(cityId: number) {
@@ -26,9 +28,12 @@ export class SearchBikerideService {
     );
   }
 
-  setbikeRidesByCityResult(result: any) { return this.bikeRidesByCityResult = result; }
+  setbikeRidesByCityResult(result: any) { 
+    return this.bikeRidesByCityResult = result; 
+  }
 
-  getBikeRidesByCityResult() { 
+  getBikeRidesByCityResult() {
+    console.log(this.bikeRidesByCityResult);
     return this.bikeRidesByCityResult;
   }
 
@@ -38,10 +43,27 @@ export class SearchBikerideService {
     );
   }
 
-  setbikeRidesByStateResult(result: any) { return this.bikeRidesByStateResult = result; }
+  setbikeRidesByStateResult(result: any) { 
+    return this.bikeRidesByStateResult = result; 
+  }
 
-  getBikeRidesByStateResult() { 
-    return this.bikeRidesByStateResult; 
+  getBikeRidesByStateResult() {
+    console.log(this.bikeRidesByStateResult);
+    return this.bikeRidesByStateResult;
+  }
+
+  getBikeRidesByCountry(countryId: number) {
+    return this.http.get<any>(`${this.apiBaseUrlBikeRidesByCountry}/${countryId}`).pipe(
+      catchError(this.errorHandlerService.handleError)
+    );
+  }
+
+  setbikeRidesByCountryResult(result: any) { 
+    return this.bikeRidesByCountryResult = result; 
+  }
+
+  getBikeRidesByCountryResult() {
+    return this.bikeRidesByCountryResult;
   }
 
   getBikeRidesByDate(date: any) {
@@ -50,10 +72,21 @@ export class SearchBikerideService {
     );
   }
 
-  setbikeRidesByDateResult(result: any) { return this.bikeRidesByDateResult = result; }
-
-  getBikeRidesByDateResult() { 
-    return this.bikeRidesByDateResult; 
+  setbikeRidesByDateResult(result: any) { 
+    return this.bikeRidesByDateResult = result; 
   }
+
+  getBikeRidesByDateResult() {
+    console.log(this.bikeRidesByDateResult);
+    return this.bikeRidesByDateResult;
+  }
+
+  init() {
+    this.bikeRidesByCityResult = '';
+    this.bikeRidesByStateResult = '';
+    this.bikeRidesByCountryResult = '';
+    this.bikeRidesByDateResult = '';
+  }
+
 }
 
