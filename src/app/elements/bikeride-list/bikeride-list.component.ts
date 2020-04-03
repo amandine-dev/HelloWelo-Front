@@ -33,20 +33,17 @@ export class BikerideListComponent implements OnInit {
   }
 
   // addParticipant(participants: ParticipantModel[]) {
-  //   alert("Vous êtes bien inscrits")
-
-  //   if (this.participants.length <= this.numberMaxParticipants) {
-
-  //     // this.participant = (this.userService.getUser(id));
-
-  //     this.participantService.addParticipant(this.participant)
-  //       .subscribe(
-  //         (data: ParticipantModel[]) => this.bikerides = data
-  //       );
-
-  //   } else {
-  //     alert("il n'y a plus de places")
-  //   }
+    // alert("Vous êtes bien inscrits")
+    // if (this.participants.length <= this.numberMaxParticipants) {
+    // this.participant = (dans cette variable il faut ajouter l'UserId et le BikeRideId)
+    // this.participantService.addParticipant(particpant)
+    // .subscribe(
+    // (data: ParticipantModel) => console.log('Participand ajouté')
+    //  );
+     
+    //  } else {
+    // alert("il n'y a plus de places")
+    //  } 
   // }
 
   // onClick(): void {
