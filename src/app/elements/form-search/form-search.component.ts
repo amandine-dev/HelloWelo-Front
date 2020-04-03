@@ -43,6 +43,7 @@ export class FormSearchComponent implements OnInit {
   }
 
   onChangeCountry(countryId: number) {
+    console.log(countryId);
     if (countryId) {
       this.cscService.getStates(countryId).subscribe(
         data => {
@@ -57,6 +58,7 @@ export class FormSearchComponent implements OnInit {
   }
 
   onChangeState(stateId: number) {
+    console.log(stateId)
     if (stateId) {
       this.cscService.getCities(stateId).subscribe(
         data => {
@@ -69,6 +71,8 @@ export class FormSearchComponent implements OnInit {
 
   onSubmit(): void {
     if (this.form.value.CityId && !this.form.value.date) {
+    console.log(this.form.value.CityId);
+    if (this.form.value.CityId) {
       const city = this.form.value.CityId;
       console.log(city);
 
@@ -120,4 +124,5 @@ export class FormSearchComponent implements OnInit {
     console.log(this.form.value);
   }
 
+}
 }
