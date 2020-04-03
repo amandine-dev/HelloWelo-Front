@@ -29,6 +29,8 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getCountries();
+
     this.form = this.formBuilder.group({
       firstName: new FormControl(),
       lastName: new FormControl(),
@@ -36,12 +38,9 @@ export class RegisterComponent implements OnInit {
       birthday: new FormControl(),
       email: new FormControl(),
       password: new FormControl(),
-      CountryId: this.getCountries(),
-      StateId: new FormControl(),
-      CityId: this.getCities()
+      CityId: new FormControl(),
     });
   }
-
 
   getCities() {
     this.cityService.getCities()
