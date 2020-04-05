@@ -11,20 +11,29 @@ import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
 import { DetailsBaladeComponent } from './pages/details-balade/details-balade.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
+import { UserDetailsComponent } from './User/user-details/user-details.component';
+import { BikerideListComponent } from './elements/bikeride-list/bikeride-list.component';
+import { BikerideComponent } from './elements/bikeride/bikeride.component';
+import { AddBikerideComponent } from './elements/add-bikeride/add-bikeride.component';
 
 
 const routes: Routes = [
   { path:'', component: HomeComponent },
   { path:'les-sorties', component: LesSortiesComponent },
-  { path:'proposer-une-balade', component : ProposerUneBaladeComponent },
+  { path:'proposer-une-balade', component : ProposerUneBaladeComponent },//canActivate: [AuthGuard]//
   { path:'contact', component: ContactComponent },
-  { path:'mon-espace', component: MonEspaceComponent},
+  { path:'mon-espace', component: MonEspaceComponent },//canActivate: [AuthGuard]//
+  { path: 'profil', component: UserDetailsComponent },
+
+    
   { path:'connexion', component: ConnexionComponent },
   { path:'level', component: AddLevelComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'balade/:id', component: DetailsBaladeComponent},
-  {path: 'search-results', component: SearchResultsComponent}
+  {path: 'search-results', component: SearchResultsComponent},
+  {path: 'user-details', component: UserDetailsComponent},
+
 ];
 
 @NgModule({
