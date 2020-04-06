@@ -33,6 +33,10 @@ import { ToggleBoxComponent } from './elements/toggle-box/toggle-box.component';
 import { ContactFormComponent } from './Core/contact-form/contact-form.component';
 import { BikerideSearchResultComponent } from './elements/bikeride-search-result/bikeride-search-result.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
+import { NavOngletComponent } from './User/nav-onglet/nav-onglet.component';
+import { UserDetailsComponent } from './User/user-details/user-details.component';
+import { OrganiserListComponent } from './User/organiser-list/organiser-list.component';
+import { UserBikerideListComponent } from './User/user-bikeride-list/user-bikeride-list.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +68,12 @@ import { SearchResultsComponent } from './pages/search-results/search-results.co
     ContactFormComponent,
     BikerideSearchResultComponent,
     SearchResultsComponent,
+    NavOngletComponent,
+    UserDetailsComponent,
+    OrganiserListComponent,
+    UserBikerideListComponent,
+    
+
   ],
   imports: [
     BrowserModule,
@@ -71,7 +81,8 @@ import { SearchResultsComponent } from './pages/search-results/search-results.co
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
+
     
     
   ],

@@ -1,0 +1,27 @@
+
+  .nav li:hover {
+    cursor: pointer;
+  }
+  
+
+  .tab-content {
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border-style: solid;
+      border-color: lightgrey;
+      border-radius: 10px;
+      border-width: 1px;
+      box-shadow: 0 4px 5px 0 rgba(0,0,0,0.19);
+
+  }
+
+ *a{
+      color:black;
+      font-size: bold;
+      border-color: #FCB108;
+      border-width: 1px;
+      
+  }
+  
