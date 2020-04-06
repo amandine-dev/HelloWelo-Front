@@ -31,15 +31,17 @@ export class FormSearchComponent implements OnInit {
       CountryId: new FormControl(''),
       StateId: new FormControl(''),
       CityId: new FormControl(''),
-      date: new FormControl ('')
+      date: new FormControl('')
     });
+
+    this.searchBikerideService.init();
   }
 
   getCountries() {
     this.cscService.getCountries()
       .subscribe(data => {
         this.countries = data;
-    });
+      });
   }
 
   onChangeCountry(countryId: number) {
@@ -70,23 +72,55 @@ export class FormSearchComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.form.value.CityId);
-    if (this.form.value.CityId) {
+
+    if (this.form.value.CityId && !this.form.value.date) {
       const city = this.form.value.CityId;
       console.log(city);
-      
-      this.searchBikerideService.getBikeRidesByCity(city)
-       .subscribe(data => {
-         console.log(data);
-         this.searchBikerideService.setbikeRidesByCityResult(data);
-         
-        this.router.navigate(['/search-results']);
-      },
-      (err: Error) => console.log(err),
-      () => console.log('Request completed')
-    );
-    console.log(this.form.value);
-    }
-  }
 
+      this.searchBikerideService.getBikeRidesByCity(city)
+        .subscribe(data => {
+          console.log(data);
+          this.searchBikerideService.setbikeRidesByCityResult(data);
+
+          this.router.navigate(['/search-results', 'city']);
+        },
+          (err: Error) => console.log(err),
+          () => console.log('Request completed')
+        );
+    }
+
+    if (this.form.value.StateId && !this.form.value.CityId && !this.form.value.date) {
+      const state = this.form.value.StateId;
+      console.log(state);
+
+      this.searchBikerideService.getBikeRidesBySate(state)
+        .subscribe(data => {
+          console.log(data);
+          this.searchBikerideService.setbikeRidesByStateResult(data);
+
+          this.router.navigate(['/search-results', 'state']);
+        },
+          (err: Error) => console.log(err),
+          () => console.log('Request completed')
+        );
+    }
+
+    if (this.form.value.date && !this.form.value.CountryId) {
+      const date = this.form.value.date + 'T00:00:00.000Z';
+      console.log(date);
+
+      this.searchBikerideService.getBikeRidesByDate(date)
+        .subscribe(data => {
+          console.log(data);
+          this.searchBikerideService.setbikeRidesByDateResult(data);
+
+          this.router.navigate(['/search-results', 'date']);
+        },
+          (err: Error) => console.log(err),
+          () => console.log('Request completed')
+        );
+    }
+
+    console.log(this.form.value);
+  }
 }

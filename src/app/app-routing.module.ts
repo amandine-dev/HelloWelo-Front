@@ -18,13 +18,13 @@ const routes: Routes = [
   { path:'les-sorties', component: LesSortiesComponent },
   { path:'proposer-une-balade', component : ProposerUneBaladeComponent },
   { path:'contact', component: ContactComponent },
-  { path:'mon-espace', component: MonEspaceComponent},
+  { path:'mon-espace', component: MonEspaceComponent },
   { path:'connexion', component: ConnexionComponent },
-  { path:'level', component: AddLevelComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'balade/:id', component: DetailsBaladeComponent},
-  {path: 'search-results', component: SearchResultsComponent}
+  { path:'level', component: AddLevelComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'balade/:id', component: DetailsBaladeComponent },
+  { path: 'search-results/:type', component: SearchResultsComponent }
 ];
 
 @NgModule({
