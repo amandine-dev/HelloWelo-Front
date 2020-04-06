@@ -14,6 +14,7 @@ import { isNgTemplate } from '@angular/compiler';
 })
 export class AddBikerideComponent implements OnInit {
   form: FormGroup;
+  submitted = false;
 
   countries = [];
   states = [];
@@ -27,7 +28,7 @@ export class AddBikerideComponent implements OnInit {
     private addbikerideService: AddbikerideService,
     private router: Router,
     private cscService: CscService,
-    private levelService: LevelService
+    private levelService: LevelService,
   ) { }
 
   
@@ -35,21 +36,22 @@ export class AddBikerideComponent implements OnInit {
     this.getCountries();
     this.getLevels();    
 
+    
     this.form = this.formBuilder.group({
-      title: new FormControl(''),
-      date: new FormControl (''),
-      time: new FormControl (''),
+      title: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      date: new FormControl ('selectedDate',[Validators.required]),
+      time: new FormControl ('',[Validators.required]),
       numberKm: new FormControl (''),
-      description: new FormControl (''),
-      meetingPoint: new FormControl (''),
+      description: new FormControl ('', [Validators.required, Validators.maxLength(2000)]),
+      meetingPoint: new FormControl ('',[Validators.required]),
       itinerary: new FormControl (''),
-      numberMaxParticipants: new FormControl (''),
+      numberMaxParticipants: new FormControl ('',[Validators.required, Validators.min(1), Validators.max(40)]),
       // RideTypeId: new FormControl(''),
-      RideLevelId: new FormControl(''),
+      RideLevelId: new FormControl('',[Validators.required]),
       RideStatusId: new FormControl(''),
-      CountryId: new FormControl(''),
-      StateId: new FormControl(''),
-      CityId: new FormControl(''),
+      CountryId: new FormControl('',[Validators.required]),
+      StateId: new FormControl('',[Validators.required]),
+      CityId: new FormControl('',[Validators.required]),
     });
   }
 
@@ -92,8 +94,12 @@ export class AddBikerideComponent implements OnInit {
     }
   }
 
+  get f() { return this.form.controls; }
+
 
   onSubmit(): void {
+    this.submitted = true;
+
     if (this.form.valid) {
       const bikeride = this.form.value as BikerideModel;
 
@@ -113,5 +119,5 @@ export class AddBikerideComponent implements OnInit {
       console.log(this.form.value);
     }
   }
+  }
 
-}
