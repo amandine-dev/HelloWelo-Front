@@ -29,7 +29,7 @@
                 class="picto d-inline-block align-top" alt="">Connexion</div>
           </li>
           <li *ngIf="authService.user" (click)="onLogout()">
-            <div class="nav-link active" [routerLink]="['/']"><img src="../../../assets/picto/wheel.svg" width="15"
+            <div class="nav" [routerLink]="['/']"><img src="../../../assets/picto/wheel.svg" width="15"
                 height="30" class="picto d-inline-block align-top" alt="">Déconnexion</div>
           </li>
       </ul>
