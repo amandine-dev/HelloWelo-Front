@@ -1,3 +1,4 @@
+import { AuthService } from 'src/app/services/auth.service';
 import { ErrorhandlerService } from './error-handler.service';
 import { tap, catchError } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
@@ -13,9 +14,12 @@ const apiUrl = "http://localhost:3000/users";
 
 export class UserService {
 
+  UserId: number;
+
   constructor(
     private http: HttpClient,
-    private errorHandlerService: ErrorhandlerService
+    private errorHandlerService: ErrorhandlerService,
+    private authService: AuthService
   ) { }
 
   save(user: UserModel): Observable<UserModel> {
@@ -23,11 +27,15 @@ export class UserService {
   }
 
   getUser(id: number): Observable<any> {
-    const url = `${apiUrl}/${id}`;
+
+    this.UserId = this.authService.user.id;
+    console.log(this.UserId);
+
+    const url = `${apiUrl}/${this.UserId}`;
 
     return this.http.get(url)
       .pipe(
-        tap((user: UserModel) => console.log(`fetched participant id =${id}`)),
+        tap((user: UserModel) => console.log(`fetched participant id =${this.UserId}`)),
 
         catchError(this.errorHandlerService.handleError<UserModel>('getUser'))
       );

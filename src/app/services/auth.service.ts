@@ -13,11 +13,9 @@ interface UserAuth {
   providedIn: 'root'
 })
 export class AuthService {
-  
   private userSubject: BehaviorSubject<UserModel>;
   user$: Observable<UserModel>
   private loginUrl = 'http://localhost:3000/users/login';
-
   constructor(private http: HttpClient) {
     this.userSubject = new BehaviorSubject<UserModel>(null);
     const data = localStorage.getItem('user_storage');
@@ -29,7 +27,7 @@ export class AuthService {
   }
   // this.authService.user
   // value === UserModel | null
-  public getUser(): UserModel {
+  public get user(): UserModel {
     return this.userSubject.value;
   }
   public getToken() {
@@ -50,6 +48,7 @@ export class AuthService {
         })
       );
   }
+  
   logout(): void {
     localStorage.removeItem('user_storage');
     localStorage.removeItem('user_token');
