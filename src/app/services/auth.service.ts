@@ -7,7 +7,7 @@ import { UserModel } from '../models/user.models';
 
 interface UserAuth {
   message: string;
-  user: UserModel;
+  User: UserModel;
   token: string;
 }
 
@@ -16,7 +16,7 @@ interface UserAuth {
 })
 export class AuthService {
   private userSubject: BehaviorSubject<UserModel>;
-  private user$: Observable<UserModel>
+  user$: Observable<UserModel>
   private loginUrl = 'http://localhost:3000/users/login';
 
   constructor(private http: HttpClient) {
@@ -50,11 +50,11 @@ export class AuthService {
       )
       .pipe(
         map((data: UserAuth) => {
-          localStorage.setItem('user_storage', JSON.stringify(data.user));
+          localStorage.setItem('user_storage', JSON.stringify(data.User));
           localStorage.setItem('user_token', JSON.stringify(data.token));
-          this.userSubject.next(data.user);
+          this.userSubject.next(data.User);
 
-          return data.user;
+          return data.User;
         })
       );
   }
