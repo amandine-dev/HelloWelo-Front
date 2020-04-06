@@ -10,6 +10,7 @@ const apiUrl = "http://localhost:3000/users";
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
 
   constructor(
@@ -32,5 +33,7 @@ export class UserService {
       );
   }
 }
+
+
 
 

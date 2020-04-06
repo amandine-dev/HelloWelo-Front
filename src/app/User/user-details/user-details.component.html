@@ -1,0 +1,60 @@
+<div class="container" *ngIf="isLoadingResults">
+    <div *ngIf="isLoadingResults">
+        <div  class="columns">
+            <div class="illustration"><img class="round-style" src="../../../assets/img/familiale.jpg" alt=""></div>
+            <div class="column">
+                <div>
+                    <div class="column">
+                        <div class="coltext">Pseudo:<span>{{ user.nickName }}</span></div> 
+                    </div>
+                    <div class="column">
+                        <div class="coltext">Nom:<span>{{ user.firstName }}</span></div>       
+                    </div>
+                    <div class="column">
+                        <div class="coltext">Prénom:<span>{{ user.lastName }}</span></div>      
+                    </div>       
+                    <div class="datetime">
+                        <div class="column">
+                            <span class="coltext">Date de naissance: </span><span>{{ user.birthday | date: 'dd/MM/yyyy'}}</span>          
+                        </div>
+    
+                    </div>
+                    <div class="datetime">
+                        <div class="column">
+                            <span class="coltext">Email: </span><span>{{ user.email }}</span>         
+                        </div>
+                        
+                        <!--
+                     <div class="column">
+                       <span *ngFor="let city of cityId" class="coltext">Ville de rattachement: </span><span>/{{ city.name }}</span>         
+                   </span>
+                    -->
+                             
+                </div>
+                </div>
+            </div>
+        </div>
+        <div>
+    <!--
+         <div class="coltext-description">
+                <div class="description">
+                    <div class="coltext">Ma tribu : </div><span></span>
+                </div>
+            </div>
+    -->       
+        </div>
+
+    </div>
+    <div>
+        <div class="btn">
+            <div class="btn">
+                <button [routerLink]="'/'" class="btn btn1 btnred"><span class="btnnoir">Supprimer</span>
+            </button>    
+            </div>
+            <div class="btn">
+                <button  class="btn btn1 btnvert"><span class="btnnoir">M</span><span class="btnvert">O</span><span class="btnnoir">difier</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

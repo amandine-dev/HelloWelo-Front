@@ -1,0 +1,52 @@
+.container{
+    gap: 20px;
+}
+.datetime {
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.buttonstyle {
+    border-color: grey;
+    border:2px
+}
+
+.round-style {
+    background-color: white;
+    border-radius: 100%;
+    width: 160px;
+    height: 160px;
+    border-color: lightgrey;
+    margin: 20px 30px 20px 30px;   
+}
+
+.coltext {
+    font-weight: 500;
+    text-align: justify;
+    gap: 20px
+
+}
+
+.coltext-description {
+    text-align: justify;
+}
+
+
+.description{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 994px) {
+    .illustration{
+        display: flex;
+        justify-content: center;
+        flex-grow: 0;
+    }
+
+    .illustration > img {
+        width: 30%;
+        height: 30%;
+    }
+}
