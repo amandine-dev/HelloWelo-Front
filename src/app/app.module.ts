@@ -33,14 +33,10 @@ import { ToggleBoxComponent } from './elements/toggle-box/toggle-box.component';
 import { ContactFormComponent } from './Core/contact-form/contact-form.component';
 import { BikerideSearchResultComponent } from './elements/bikeride-search-result/bikeride-search-result.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
-<<<<<<< HEAD
-import { DetailsUserComponent } from './User/details-user/details-user.component';
-=======
 import { NavOngletComponent } from './User/nav-onglet/nav-onglet.component';
 import { UserDetailsComponent } from './User/user-details/user-details.component';
 import { OrganiserListComponent } from './User/organiser-list/organiser-list.component';
 import { UserBikerideListComponent } from './User/user-bikeride-list/user-bikeride-list.component';
->>>>>>> development
 
 @NgModule({
   declarations: [
@@ -72,17 +68,11 @@ import { UserBikerideListComponent } from './User/user-bikeride-list/user-bikeri
     ContactFormComponent,
     BikerideSearchResultComponent,
     SearchResultsComponent,
-<<<<<<< HEAD
-    DetailsUserComponent,
-=======
     NavOngletComponent,
     UserDetailsComponent,
     OrganiserListComponent,
     UserBikerideListComponent,
-    
-
->>>>>>> development
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
