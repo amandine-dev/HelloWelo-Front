@@ -39,7 +39,6 @@ export class UserDetailsComponent implements OnInit {
         console.log(this.user);
         this.isLoadingResults = true;
       });
-
   }
 
 

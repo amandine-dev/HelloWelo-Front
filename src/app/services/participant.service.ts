@@ -14,6 +14,8 @@ const apiUrlParticipantsByBikeride = "http://localhost:3000/participants/bikerid
 
 export class ParticipantService {
 
+  UserId: number;
+
   constructor(
     private http: HttpClient,
     private errorHandlerService: ErrorhandlerService
@@ -67,5 +69,14 @@ export class ParticipantService {
       catchError(this.errorHandlerService.handleError)
     );
   }
+
+  getBikerideByParticipant(participantId: number) {
+    const url = `${apiUrlParticipantsByBikeride}/${participantId}`
+
+    return this.http.get<any>(url).pipe(
+      catchError(this.errorHandlerService.handleError)
+    );
+  }
+
 
 }
