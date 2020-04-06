@@ -33,6 +33,7 @@ import { ToggleBoxComponent } from './elements/toggle-box/toggle-box.component';
 import { ContactFormComponent } from './Core/contact-form/contact-form.component';
 import { BikerideSearchResultComponent } from './elements/bikeride-search-result/bikeride-search-result.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
+import { DetailsUserComponent } from './User/details-user/details-user.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { SearchResultsComponent } from './pages/search-results/search-results.co
     ContactFormComponent,
     BikerideSearchResultComponent,
     SearchResultsComponent,
+    DetailsUserComponent,
   ],
   imports: [
     BrowserModule,
