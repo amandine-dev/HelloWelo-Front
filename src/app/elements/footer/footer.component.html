@@ -7,9 +7,8 @@
             <div class="links">
                 <div class="liens">
                     <div><a class="text-decoration-none text-dark" href="/les-sorties">Les sorties</a></div>
-                    <div><a class="text-decoration-none text-dark" href="/proposer-une-balade">Proposer une balade</a>
-                    </div>
-                    <div><a class="text-decoration-none text-dark" href="/mon-espace">Mon espace</a></div>
+                    <div><a class="text-decoration-none text-dark" href="/proposer-une-balade">Proposer une balade</a></div>
+                    <div *ngIf="authService.user"><a class="text-decoration-none text-dark" href="/mon-espace">Mon espace</a></div>
                     <div><a class="text-decoration-none text-dark" href="/contact/#contact-formulaire">Contact</a></div>
                 </div>
             </div>
