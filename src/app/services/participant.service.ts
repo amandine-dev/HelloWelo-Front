@@ -1,11 +1,12 @@
 import { tap, catchError } from 'rxjs/operators';
-import { ParticipantModel } from './../models/participant.models';
+import { ParticipantModel } from './../models/participant.model';
 import { ErrorhandlerService } from './error-handler.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 const apiUrl = "http://localhost:3000/participants";
+const apiUrlParticipantsByBikeride = "http://localhost:3000/participants/bikeride";
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +57,14 @@ export class ParticipantService {
       tap(_ => console.log(`updated participant id=${id}`)),
 
       catchError(this.errorHandlerService.handleError<any>('editParticipant'))
+    );
+  }
+
+  getParticipantsByBikeRide(bikeRideId: number) {
+    const url = `${apiUrlParticipantsByBikeride}/${bikeRideId}`
+
+    return this.http.get<any>(url).pipe(
+      catchError(this.errorHandlerService.handleError)
     );
   }
 
