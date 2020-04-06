@@ -8,6 +8,7 @@ export class BikerideModel {
     meetingPoint: string = '';
     itinerary: string =''
     numberMaxParticipants: number;
+    numberParticipants: number;
     rideTypeId: number;
     rideLevelId: number;
     rideStatusId: number;
