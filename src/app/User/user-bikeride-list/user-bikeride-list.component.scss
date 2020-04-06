@@ -31,10 +31,12 @@
 
     .list-group-item {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
-
+    
     .list-title {
-        width: 100%;
+        width: 50%;
+        text-align: center;
     }
 }
