@@ -6,6 +6,16 @@ h2 {
     text-align: center;
 }
 
+h3{
+    text-decoration: underline;
+    text-decoration-color: black;
+    font-weight: 500;
+}
+
+a {
+    font-weight: 600;
+}
+
 .grid-container {
     margin: 3% 6% 6%;
 }
@@ -18,6 +28,12 @@ h2 {
 .titre {
     width: 100%;
     text-align: center;
+    font-size: 18px;
+}
+
+.mark {
+    color: black;
+    box-shadow: 0 2px 1px 0 rgba(0,0,0,0.19);
 }
 
 .column {
@@ -55,6 +71,14 @@ h2 {
     display: flex;
     justify-content: center;
     margin-top: 3%;
+}
+
+.message-link {
+    background-color: rgb(240, 252, 229);
+}
+.message-link >p {
+    text-align: center;
+    padding-top: 10px;
 }
 
 @media screen and (max-width: 994px) {
