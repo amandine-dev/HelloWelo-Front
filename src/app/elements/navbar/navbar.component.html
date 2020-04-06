@@ -24,11 +24,11 @@
             <div class="nav" [routerLink]="['/mon-espace']"><img src="../../../assets/picto/espace.svg" width="15"
                 height="30" class="picto d-inline-block align-top" alt="">Mon espace</div>
           </li>
-          <li *ngIf="!authService.user">
+          <li *ngIf="!authService.user$">
             <div class="nav" [routerLink]="['/connexion']"><img src="../../../assets/picto/wheel.svg" width="15" height="30"
                 class="picto d-inline-block align-top" alt="">Connexion</div>
           </li>
-          <li *ngIf="authService.user" (click)="onLogout()">
+          <li *ngIf="authService.user$" (click)="onLogout()">
             <div class="nav" [routerLink]="['/']"><img src="../../../assets/picto/wheel.svg" width="15"
                 height="30" class="picto d-inline-block align-top" alt="">Déconnexion</div>
           </li>
@@ -60,11 +60,11 @@
         <div class="nav" [routerLink]="['/mon-espace']"><img src="../../../assets/picto/espace.svg" width="15"
             height="30" class="picto d-inline-block align-top" alt="">Mon espace</div>
       </li>
-      <li class="nav-item" *ngIf="!authService.user">
+      <li class="nav-item" *ngIf="!authService.user$">
         <div class="nav" [routerLink]="['/connexion']"><img src="../../../assets/picto/wheel.svg" width="15" height="30"
             class="picto d-inline-block align-top" alt="">Connexion</div>
       </li>
-      <li class="nav-item" *ngIf="authService.user" (click)="onLogout()">
+      <li class="nav-item" *ngIf="authService.user$" (click)="onLogout()">
         <div class="nav active" [routerLink]="['/']"><img src="../../../assets/picto/wheel.svg" width="15"
             height="30" class="picto d-inline-block align-top" alt="">Déconnexion</div>
       </li>

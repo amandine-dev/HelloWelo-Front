@@ -88,7 +88,7 @@ export class RegisterComponent implements OnInit {
       this.userService.save(user)
         .subscribe(
           (data: UserModel) => {
-            this.router.navigate(['/connexion']);
+            location.reload();
           },
           (err: Error) => console.log(err),
           () => console.log('Request has completed')

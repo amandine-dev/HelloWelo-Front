@@ -23,7 +23,7 @@ const routes: Routes = [
   { path:'proposer-une-balade', component : ProposerUneBaladeComponent },//canActivate: [AuthGuard]//
   { path:'contact', component: ContactComponent },
   { path:'mon-espace', component: MonEspaceComponent },
-  { path:'connexion', component: ConnexionComponent },
+  { path:'connexion', component: ConnexionComponent, runGuardsAndResolvers: 'always' },
   { path:'level', component: AddLevelComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
@@ -36,7 +36,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
