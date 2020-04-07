@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 
 const apiUrl = "http://localhost:3000/participants";
 const apiUrlParticipantsByBikeride = "http://localhost:3000/participants/bikeride";
+const apiUrlBikerideByParticipants = "http://localhost:3000/participants/user"
 
 @Injectable({
   providedIn: 'root'
@@ -71,7 +72,7 @@ export class ParticipantService {
   }
 
   getBikerideByParticipant(participantId: number) {
-    const url = `${apiUrlParticipantsByBikeride}/${participantId}`
+    const url = `${apiUrlBikerideByParticipants}/${participantId}`
 
     return this.http.get<any>(url).pipe(
       catchError(this.errorHandlerService.handleError)

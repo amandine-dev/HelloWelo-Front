@@ -38,7 +38,8 @@ export class UserBikerideListComponent implements OnInit {
     this.participantService.getBikerideByParticipant(this.userId)
       .subscribe(
         (data: ParticipantModel[]) => {
-          this.participants = data.filter(data => data.UserId === this.userId)
+          this.participants = data
+          console.log(data);
         }
       );
   }
