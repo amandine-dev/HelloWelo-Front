@@ -37,6 +37,7 @@ import { NavOngletComponent } from './User/nav-onglet/nav-onglet.component';
 import { OrganiserListComponent } from './User/organiser-list/organiser-list.component';
 import { UserBikerideListComponent } from './User/user-bikeride-list/user-bikeride-list.component';
 import { UserDetailsComponent } from './User/user-details/user-details.component';
+import { BackButtonDirective } from './elements/back-button.directive';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { UserDetailsComponent } from './User/user-details/user-details.component
     UserDetailsComponent,
     OrganiserListComponent,
     UserBikerideListComponent,
+    BackButtonDirective,
   ],
   imports: [
     BrowserModule,
