@@ -48,14 +48,14 @@ export class AddBikerideComponent implements OnInit {
 
 
     this.form = this.formBuilder.group({
-      title: new FormControl(''),
-      date: new FormControl(''),
-      time: new FormControl(''),
+      title: new FormControl('', [Validators.required, Validators.minLength(4)]),
+      date: new FormControl ('selectedDate',[Validators.required]),
+      time: new FormControl ('',[Validators.required]),
       numberKm: new FormControl(''),
-      description: new FormControl(''),
-      meetingPoint: new FormControl(''),
+      description: new FormControl ('', [Validators.required, Validators.maxLength(2000)]),
+      meetingPoint: new FormControl ('',[Validators.required]),
       itinerary: new FormControl(''),
-      numberMaxParticipants: new FormControl(''),
+      numberMaxParticipants: new FormControl ('',[Validators.required, Validators.min(1), Validators.max(40)]),
       numberParticipants: new FormControl(''),
       // RideTypeId: new FormControl(''),
       RideLevelId: new FormControl('', [Validators.required]),
