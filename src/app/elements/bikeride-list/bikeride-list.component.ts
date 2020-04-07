@@ -20,13 +20,11 @@ export class BikerideListComponent implements OnInit {
   selectedBikeRide: BikerideModel;
   bikeRideId: number;
   numberMaxParticipants: number;
+  numberParticipants: number;
 
   // user id
   UserId: number;
 
-  // current participants list to selected bike ride
-  participants: ParticipantModel[] = [];
-  numberParticipants: number;
   // new participant to be added to bike ride participants list
   newParticipant: ParticipantModel = new ParticipantModel();
 
@@ -58,23 +56,16 @@ export class BikerideListComponent implements OnInit {
     this.bikeRideId = selectedBikeRide.id;
     console.log(this.bikeRideId);
 
+    this.numberParticipants = selectedBikeRide.numberParticipants;
+    console.log(this.numberParticipants);
+
     this.numberMaxParticipants = selectedBikeRide.numberMaxParticipants;
     console.log(this.numberMaxParticipants);
-    
-    this.getParticipantsList();
+
     this.setNewParticipant(this.bikeRideId, this.UserId);
     this.addParticipant(this.newParticipant);
   }
 
-  getParticipantsList() {
-    this.participantService.getParticipantsByBikeRide(this.bikeRideId)
-      .subscribe(data => {
-        this.participants = data;
-        console.log(this.participants);
-        this.numberParticipants = this.participants.length;
-        console.log(this.numberParticipants);
-      });
-  }
 
   setNewParticipant(bikRideId, userId) {
     this.newParticipant.BikeRideId = bikRideId;
@@ -83,8 +74,6 @@ export class BikerideListComponent implements OnInit {
   }
 
   addParticipant(participant: ParticipantModel) {
-    console.log("hey");
-    
     if (this.numberParticipants <= this.numberMaxParticipants) {
       this.participantService.addParticipant(participant)
         .subscribe(data => {
@@ -94,6 +83,8 @@ export class BikerideListComponent implements OnInit {
           (err: Error) => console.log(err),
           () => console.log('Request completed')
         );
+    } else {
+      console.log("Full bike ride");
     }
   }
 
