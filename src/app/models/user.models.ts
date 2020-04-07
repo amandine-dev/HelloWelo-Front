@@ -1,3 +1,5 @@
+import { BikerideModel } from 'src/app/models/bikeride.models';
+
 export class UserModel {
     id?: number;
     firstName: string = '';
@@ -9,4 +11,5 @@ export class UserModel {
     CityId: number;
     createdAt: Date = new Date();
     updatedAt: Date = new Date();
+    Bikerides: BikerideModel[];
 }
