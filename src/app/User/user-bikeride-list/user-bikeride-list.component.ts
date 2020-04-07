@@ -1,11 +1,12 @@
+import { UserService } from 'src/app/services/user.service';
 import { ParticipantModel } from 'src/app/models/participant.model';
 import { ParticipantService } from 'src/app/services/participant.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AddbikerideService } from 'src/app/services/addbikeride.service';
 import { BikerideModel } from 'src/app/models/bikeride.models';
 import { data } from 'jquery';
+import { UserModel } from 'src/app/models/user.models';
 
 @Component({
   selector: 'app-user-bikeride-list',
@@ -17,13 +18,12 @@ export class UserBikerideListComponent implements OnInit {
   bikerides: BikerideModel[];
   participants: ParticipantModel[];
   userId: number;
-  bikerideId: number;
-
+  
   constructor(
-    private addbikerideService: AddbikerideService,
     private router: Router,
     private authService: AuthService,
-    private participantService: ParticipantService
+    private participantService: ParticipantService,
+    public userService: UserService,
   ) { }
 
 
