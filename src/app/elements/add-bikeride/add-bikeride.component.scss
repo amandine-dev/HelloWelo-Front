@@ -12,6 +12,15 @@ label {
     min-width: 79%;   
 }
 
+.round-style {
+    background-color: white;
+    border-radius: 100%;
+    width: 140px;
+    height: 140px;
+    border: solid 2px lightgrey;
+    margin: 10px 30px 10px 10px;   
+}
+
 .buttonstyle{
     background-color: white;
     border-radius: 100%;
@@ -82,5 +91,18 @@ h3{
 }
 .space{
     margin-right: 100px;
+}
+
+@media screen and (max-width: 994px) {
+    .illustration{
+        display: flex;
+        justify-content: center;
+        flex-grow: 0;
+    }
+
+    .illustration > img {
+        width: 30%;
+        height: 30%;
+    }
 }
 
