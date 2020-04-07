@@ -16,6 +16,7 @@ export class UserBikerideListComponent implements OnInit {
   bikerides: BikerideModel[];
   participants: ParticipantModel[];
   userId: number;
+  bikerideId: number;
 
   constructor(
     private addbikerideService: AddbikerideService,
@@ -34,6 +35,7 @@ export class UserBikerideListComponent implements OnInit {
     this.userId = this.authService.user.id;
     console.log(this.userId);
   
+    // this.bikerideId = this.participantService.getBikerideByParticipant.bikeRideId;
 
     this.participantService.getBikerideByParticipant(this.userId)
       .subscribe(
