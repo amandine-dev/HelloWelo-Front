@@ -6,8 +6,8 @@
             <div class="column">
                 <div>            
                     <h1>{{ bikeride.title }}</h1>
-                    <span class="coltext">Proposé par: </span><span><!--mettre {{user.nickName}} ?--></span>     
-                    <h2>Ville : {{ bikeride.cityId }}</h2>     
+                    <span class="coltext">Proposé par: </span><span><-- --></span>     
+                    <h2>Ville : {{ cityName }}</h2>     
                 </div>
                 <div>
                     <div class="datetime">
@@ -48,7 +48,7 @@
     <div>
         <div class="btn">
             <div class="btn">
-                <button [routerLink]="'/les-sorties'" class="btn btn1 btnred"><span class="btnnoir">Ret</span><span class="btnred">O</span><span class="btnnoir">ur</span>
+                <button backButton class="btn btn1 btnred"><span class="btnnoir">Ret</span><span class="btnred">O</span><span class="btnnoir">ur</span>
             </button>    
             </div>
             <div class="btn">

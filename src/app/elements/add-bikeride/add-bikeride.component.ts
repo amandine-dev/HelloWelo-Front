@@ -28,7 +28,7 @@ export class AddBikerideComponent implements OnInit {
 
   // user id
   UserId: number;
-  organiserParticipant: ParticipantModel;
+  organiserParticipant: ParticipantModel = new ParticipantModel();
   bikeRideId: number;
 
   constructor(
@@ -118,13 +118,20 @@ export class AddBikerideComponent implements OnInit {
       const bikeride = this.form.value as BikerideModel;
 
       this.form.value.RideStatusId = 1;
-      this.form.value.numberParticipants = 1;
+      this.form.value.numberParticipants = 0;
 
       // add bike ride to BikeRides table
       this.addbikerideService.saveBikeride(bikeride)
         .subscribe(
           (data: BikerideModel) => {
             this.bikeRideId = data.id;
+            
+            this.organiserParticipant.isOrganiser = true;
+            this.organiserParticipant.BikeRideId = this.bikeRideId;
+            this.organiserParticipant.UserId = this.UserId;
+            console.log(this.organiserParticipant);
+            this.addOrganiser(this.organiserParticipant);
+
             this.router.navigate(['/balade', data.id]);
           },
           (err: Error) => console.log(err),
@@ -133,26 +140,20 @@ export class AddBikerideComponent implements OnInit {
       console.log(this.form.value);
     }
   }
+
+
+  //add bike ride organiser to Participants table
+  addOrganiser(organiserParticipant) {
+    this.participantService.addParticipant(organiserParticipant)
+      .subscribe(
+        (data: ParticipantModel) => {
+          console.log(data);
+        },
+        (err: Error) => console.log(err),
+        () => console.log('Request completed')
+      );
+  }
+
 }
-
-  // add bike ride organiser to Participants table
-  // addOrganiser(organiserParticipant) {
-  //   console.log("hey");
-
-  //   this.organiserParticipant.isOrganiser = true;
-  //   this.organiserParticipant.BikeRideId = this.bikeRideId;
-  //   this.organiserParticipant.UserId = this.UserId;
-
-  //   console.log(this.organiserParticipant);
-
-  //   this.participantService.addParticipant(organiserParticipant)
-  //     .subscribe(
-  //       (data: ParticipantModel) => {
-  //         console.log(data);
-  //       },
-  //       (err: Error) => console.log(err),
-  //       () => console.log('Request completed')
-  //     );
-  // }
 
 
