@@ -15,6 +15,9 @@ import { CityService } from 'src/app/services/city.service';
 export class RegisterComponent implements OnInit {
 
   form: FormGroup;
+
+  submitted = false;
+
   cities = [];
   countries = [];
   states = [];
@@ -32,13 +35,15 @@ export class RegisterComponent implements OnInit {
     this.getCountries();
 
     this.form = this.formBuilder.group({
-      firstName: new FormControl(),
-      lastName: new FormControl(),
-      nickName: new FormControl(),
-      birthday: new FormControl(),
-      email: new FormControl(),
-      password: new FormControl(),
-      CityId: new FormControl(),
+      firstName: new FormControl('',[Validators.required, Validators.minLength(2), Validators.maxLength(100)]),
+      lastName: new FormControl('',[Validators.required, Validators.minLength(2), Validators.maxLength(100)]),
+      nickName: new FormControl('',[Validators.required, Validators.minLength(2), Validators.maxLength(100)]),
+      birthday: new FormControl('',[Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.pattern('[a-zA-Z0-9!$@#]{6,20}')]),
+      CountryId: new FormControl('',[Validators.required]),
+      StateId: new FormControl('',[Validators.required]),
+      CityId: new FormControl('',[Validators.required]),
     });
   }
 
@@ -81,7 +86,11 @@ export class RegisterComponent implements OnInit {
     }
   }
 
+  get f() { return this.form.controls; }
+
   onSubmit(): void {
+    this.submitted = true;
+    
     if (this.form.valid) {
       const user = this.form.value as UserModel;
 
