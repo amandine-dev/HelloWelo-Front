@@ -15,7 +15,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class BikerideListComponent implements OnInit {
   // list of bike rides
-  bikerides: BikerideModel[];
+  bikerides: any=[];
   participant: ParticipantModel;
 
   // bike ride selected by the participant

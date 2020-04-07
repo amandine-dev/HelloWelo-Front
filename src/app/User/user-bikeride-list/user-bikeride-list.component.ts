@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AddbikerideService } from 'src/app/services/addbikeride.service';
 import { BikerideModel } from 'src/app/models/bikeride.models';
+import { data } from 'jquery';
 
 @Component({
   selector: 'app-user-bikeride-list',
@@ -27,21 +28,15 @@ export class UserBikerideListComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.addbikerideService.getBikerides()
-    //   .subscribe(
-    //     (data: BikerideModel[]) => this.bikerides = data
-    //   );
 
     this.userId = this.authService.user.id;
     console.log(this.userId);
-  
-    // this.bikerideId = this.participantService.getBikerideByParticipant.bikeRideId;
 
     this.participantService.getBikerideByParticipant(this.userId)
       .subscribe(
-        (data: ParticipantModel[]) => {
-          this.participants = data
-          console.log(data);
+        (data: BikerideModel[]) => {
+          this.bikerides = data;
+          console.log(this.bikerides);
         }
       );
   }
