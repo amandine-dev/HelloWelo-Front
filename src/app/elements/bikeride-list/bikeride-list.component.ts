@@ -15,7 +15,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class BikerideListComponent implements OnInit {
   // list of bike rides
-  bikerides: any=[];
+  bikerides: any = [];
   participant: ParticipantModel;
 
   // bike ride selected by the participant
@@ -46,6 +46,11 @@ export class BikerideListComponent implements OnInit {
           console.log(this.bikerides);
         }
       );
+
+    if (this.authService.user) {
+      this.UserId = this.authService.user.id;
+      console.log(this.UserId);
+    }
   }
 
   setSelectedBikeRide(selectedBikeRide: BikerideModel) {

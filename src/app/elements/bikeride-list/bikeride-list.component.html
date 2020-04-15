@@ -14,9 +14,9 @@
         <ul class="list-group list-group-horinzontal-lg" *ngFor="let bikeride of bikerides">
             <li class="list-group-item d-flex justify-content-between align-items-md-baseline align-items-left">
                 <span class="list-title">{{ bikeride.date | date: 'dd/MM/yyyy'}}</span>
-                <span class="list-title">{{ bikeride.title }}</span>
-                <span class="list-title">{{ bikeride.city }}</span>
                 <span class="list-title">{{ bikeride.time }}</span>
+                <span class="list-title">{{ bikeride.City.name }}</span>
+                <span class="list-title">{{ bikeride.title }}</span>
                 <span class="list-title">{{ bikeride.numberKm }} km</span>
                 <div class="btn btn-list">
                     <div class="btn btn-list">

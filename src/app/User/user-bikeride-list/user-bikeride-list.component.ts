@@ -14,7 +14,7 @@ import { data } from 'jquery';
 })
 export class UserBikerideListComponent implements OnInit {
 
-  bikerides: BikerideModel[];
+  bikerides: [];
   participants: ParticipantModel[];
   userId: number;
   bikerideId: number;
@@ -29,13 +29,15 @@ export class UserBikerideListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userId = this.authService.user.id;
-    console.log(this.userId);
+    if (this.authService.user) {
+      this.userId = this.authService.user.id;
+      console.log(this.userId);
+    }
 
     this.participantService.getBikerideByParticipant(this.userId)
       .subscribe(
-        (data: BikerideModel[]) => {
-          this.bikerides = data;
+        data => {
+          this.bikerides = data.BikeRides;
           console.log(this.bikerides);
         }
       );
