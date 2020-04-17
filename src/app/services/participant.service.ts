@@ -44,23 +44,34 @@ export class ParticipantService {
 
   addParticipant(participant: ParticipantModel): Observable<ParticipantModel> {
     return this.http.post<ParticipantModel>(apiUrl, participant)
-    .pipe(
-      tap((participant: ParticipantModel) =>
-      console.log('Participant added successfully')),
+      .pipe(
+        tap((participant: ParticipantModel) =>
+          console.log('Participant added successfully')),
 
-      catchError(this.errorHandlerService.handleError<ParticipantModel>('saveParticipant'))
-    );
+        catchError(this.errorHandlerService.handleError<ParticipantModel>('saveParticipant'))
+      );
   }
 
   editParticipant(id: number, participant: ParticipantModel): Observable<any> {
     const url = `${apiUrl}/${id}`;
-    
-    return this.http.put<ParticipantModel>(url, participant)
-    .pipe(
-      tap(_ => console.log(`updated participant id=${id}`)),
 
-      catchError(this.errorHandlerService.handleError<any>('editParticipant'))
-    );
+    return this.http.put<ParticipantModel>(url, participant)
+      .pipe(
+        tap(_ => console.log(`updated participant id=${id}`)),
+
+        catchError(this.errorHandlerService.handleError<any>('editParticipant'))
+      );
+  }
+
+  deleteParticipant(bikeRideId: number, userId: number): Observable<any> {
+    const url = `${apiUrl}/${bikeRideId}/${userId}`;
+
+    return this.http.delete<any>(url)
+      .pipe(
+        tap(_ => console.log(`delete participant id=${userId} from bikeride=${bikeRideId}`),
+          catchError(this.errorHandlerService.handleError<any>('deleteParticipant'))
+        )
+      )
   }
 
   getParticipantsByBikeRide(bikeRideId: number) {
