@@ -82,7 +82,7 @@ export class BikerideListComponent implements OnInit {
       this.participantService.addParticipant(participant)
         .subscribe(data => {
           console.log(data);
-          this.router.navigate(['/mon-espace']);
+          this.router.navigate(['/mon-espace', 'participant']);
         },
           (err: Error) => console.log(err),
           () => console.log('Request completed')

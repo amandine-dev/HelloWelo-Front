@@ -45,13 +45,15 @@ export class UserBikerideListComponent implements OnInit {
 
   deleteParticipant(bikeRideId) {
     console.log(bikeRideId);
-    this.participantService.deleteParticipant(bikeRideId, this.userId)
-      .subscribe(
-        data => {
-          console.log(data);
-          this.router.navigate(['/mon-espace']);
-        }
-      )
+    if (confirm("Etes-vous sûr de vouloir vous désinscrire de cette sortie ?")) {
+      this.participantService.deleteParticipant(bikeRideId, this.userId)
+        .subscribe(
+          data => {
+            console.log(data);
+            location.reload();
+          }
+        )
+    }
   }
 
 }

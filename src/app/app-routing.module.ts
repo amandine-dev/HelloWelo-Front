@@ -22,16 +22,14 @@ const routes: Routes = [
   { path:'les-sorties', component: LesSortiesComponent },
   { path:'proposer-une-balade', component : ProposerUneBaladeComponent },//canActivate: [AuthGuard]//
   { path:'contact', component: ContactComponent },
-  { path:'mon-espace', component: MonEspaceComponent },
   { path:'connexion', component: ConnexionComponent, runGuardsAndResolvers: 'always' },
   { path:'level', component: AddLevelComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'balade/:id', component: DetailsBaladeComponent },
   { path: 'search-results/:type', component: SearchResultsComponent },
-  { path:'mon-espace', component: MonEspaceComponent },//canActivate: [AuthGuard]//
-  { path: 'profil', component: UserDetailsComponent },
-  {path: 'user-details', component: UserDetailsComponent},
+  { path:'mon-espace/:type', component: MonEspaceComponent }//canActivate: [AuthGuard]//
+
 
 ];
 

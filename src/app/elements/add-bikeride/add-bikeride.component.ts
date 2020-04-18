@@ -132,7 +132,8 @@ export class AddBikerideComponent implements OnInit {
             console.log(this.organiserParticipant);
             this.addOrganiser(this.organiserParticipant);
 
-            this.router.navigate(['/balade', data.id]);
+            // this.router.navigate(['/balade', data.id]);
+            this.router.navigate(['/mon-espace', 'organisateur']);
           },
           (err: Error) => console.log(err),
           () => console.log('Request completed')
