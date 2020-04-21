@@ -82,7 +82,7 @@ export class ParticipantService {
     );
   }
 
-  getBikerideByParticipant(participantId: number) {
+  getBikeRidesByParticipant(participantId: number) {
     const url = `${apiUrlBBP}/${participantId}`
 
     return this.http.get<any>(url).pipe(

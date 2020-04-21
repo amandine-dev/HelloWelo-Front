@@ -3,7 +3,6 @@ import { ParticipantService } from 'src/app/services/participant.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AddbikerideService } from 'src/app/services/addbikeride.service';
 import { BikerideModel } from 'src/app/models/bikeride.models';
 import { data } from 'jquery';
 
@@ -14,13 +13,11 @@ import { data } from 'jquery';
 })
 export class UserBikerideListComponent implements OnInit {
 
-  bikerides: [];
+  bikeRides: Array<any> = [];
   participants: ParticipantModel[];
   userId: number;
-  bikerideId: number;
 
   constructor(
-    private addbikerideService: AddbikerideService,
     private router: Router,
     private authService: AuthService,
     private participantService: ParticipantService
@@ -34,11 +31,17 @@ export class UserBikerideListComponent implements OnInit {
       console.log(this.userId);
     }
 
-    this.participantService.getBikerideByParticipant(this.userId)
+    this.participantService.getBikeRidesByParticipant(this.userId)
       .subscribe(
         data => {
-          this.bikerides = data.BikeRides;
-          console.log(this.bikerides);
+          // this.bikeRides = data.BikeRides;
+          // console.log(this.bikeRides);
+          data.BikeRides.forEach(e => {
+            if (e.Participant.isOrganiser == null) {
+              this.bikeRides.push(e);
+            }
+          });
+          console.log(this.bikeRides);
         }
       );
   }
