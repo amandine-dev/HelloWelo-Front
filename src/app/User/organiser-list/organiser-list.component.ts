@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { ParticipantService } from 'src/app/services/participant.service';
 import { ParticipantModel } from 'src/app/models/participant.model';
+import { AddbikerideService } from 'src/app/services/addbikeride.service';
 
 @Component({
   selector: 'app-organiser-list',
@@ -11,15 +12,17 @@ import { ParticipantModel } from 'src/app/models/participant.model';
   styleUrls: ['./organiser-list.component.scss']
 })
 export class OrganiserListComponent implements OnInit {
-  
+
   bikeRides: Array<any> = [];
   participants: ParticipantModel[];
   userId: number;
-  bikeRideId: number;
+
+  deletedBikeRide: BikerideModel;
 
   constructor(
     private authService: AuthService,
     private participantService: ParticipantService,
+    private addBikeRideService: AddbikerideService,
     private router: Router,
   ) { }
 
@@ -44,5 +47,27 @@ export class OrganiserListComponent implements OnInit {
         }
       );
   }
+
+  deleteBikeRide(bikeRideId) {
+    // this.addBikeRideService.getBikeride(bikeRideId)
+    //   .subscribe(
+    //     data => {
+    //       this.deletedBikeRide = data;
+    //       console.log(this.deleteBikeRide);
+    //     }
+    //   );
+
+    if (confirm("Etes-vous sûr de vouloir supprimer cette sortie ?")) {
+      this.addBikeRideService.deleteBikeride(bikeRideId)
+        .subscribe(
+          data => {
+            console.log(data);
+            location.reload();
+          }
+        );
+    }
+  }
+
+
 
 }
