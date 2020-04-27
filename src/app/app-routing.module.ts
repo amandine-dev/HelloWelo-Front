@@ -15,6 +15,7 @@ import { UserDetailsComponent } from './User/user-details/user-details.component
 import { BikerideListComponent } from './elements/bikeride-list/bikeride-list.component';
 import { BikerideComponent } from './elements/bikeride/bikeride.component';
 import { AddBikerideComponent } from './elements/add-bikeride/add-bikeride.component';
+import { EditBikerideComponent } from './elements/edit-bikeride/edit-bikeride.component';
 
 
 const routes: Routes = [
@@ -28,8 +29,8 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'balade/:id', component: DetailsBaladeComponent },
   { path: 'search-results/:type', component: SearchResultsComponent },
-  { path:'mon-espace/:type', component: MonEspaceComponent }//canActivate: [AuthGuard]//
-
+  { path:'mon-espace/:type', component: MonEspaceComponent },//canActivate: [AuthGuard]//
+  { path: 'modifier-balade/:id', component: EditBikerideComponent }
 
 ];
 

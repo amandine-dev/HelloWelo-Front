@@ -38,6 +38,7 @@ import { OrganiserListComponent } from './User/organiser-list/organiser-list.com
 import { UserBikerideListComponent } from './User/user-bikeride-list/user-bikeride-list.component';
 import { UserDetailsComponent } from './User/user-details/user-details.component';
 import { BackButtonDirective } from './elements/back-button.directive';
+import { EditBikerideComponent } from './elements/edit-bikeride/edit-bikeride.component';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { BackButtonDirective } from './elements/back-button.directive';
     OrganiserListComponent,
     UserBikerideListComponent,
     BackButtonDirective,
+    EditBikerideComponent,
   ],
   imports: [
     BrowserModule,

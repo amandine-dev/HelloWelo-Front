@@ -1,0 +1,150 @@
+<div class="grid-container" *ngIf="isLoadingResults">
+    <div *ngIf="isLoadingResults">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <!--div reunissant style, titre, date, heure, km-->
+            <div class="columns">
+                <!-- <button class="buttonstyle" id="button"><span class="add">+</span><br><span class="addtext">Ajouter un
+                    style</span></button>-->
+                <div class="illustration"><img class="round-style" src="../../../assets/img/decouverte.jpg" alt="">
+                </div>
+
+                <div class="form-group column">
+                    <label for="titrebalade">Titre de la balade* </label>
+                    <input formControlName="title" type="text" class="form-control" id="titrebalade"
+                        placeholder="ex: Balade le long du canal Lachine"
+                        [ngClass]="{ 'is-invalid': submitted && f.title.errors }" [value]="bikeRide.title">
+                    <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                        <div *ngIf="f.title.errors.required">Un titre pour votre balade est requis</div>
+                        <div *ngIf="f.title.errors.minlength">Veuillez entrer un minimum de 4 caractères</div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="columns">
+                    <div class="form-group column">
+                        <label for="date">Date* </label>
+                        <input formControlName="date" id="date" class="input" type="date" data-display-mode="inline"
+                            [ngClass]="{ 'is-invalid': submitted && f.date.errors }">
+                        <div *ngIf="submitted && f.date.errors" class="invalid-feedback">
+                            <div *ngIf="f.date.errors.required">Le date est requise</div>
+                        </div>
+                    </div>
+                    <div class="form-group column">
+                        <label for="time">Horaire*</label>
+                        <input formControlName="time" id="time" class="input" type="time" data-display-mode="inline"
+                            [ngClass]="{ 'is-invalid': submitted && f.time.errors }">
+                        <div *ngIf="submitted && f.time.errors" class="invalid-feedback">
+                            <div *ngIf="f.time.errors.required">Un horaire est requis</div>
+                        </div>
+                    </div>
+                    <div class="form-group column">
+                        <label for="km">Km</label>
+                        <input formControlName="numberKm" type="number" class="form-control" id="km" name="km"
+                            maxlength="5" placeholder="min. 1km">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="km">Pays*</label>
+                <select formControlName="CountryId" class="form-control" (change)="onChangeCountry($event.target.value)"
+                    [ngClass]="{ 'is-invalid': submitted && f.CountryId.errors }">
+                    <option value="">Pays</option>
+                    <option *ngFor="let country of countries" value={{country.id}}>{{country.name}}</option>
+                </select>
+                <div *ngIf="submitted && f.CountryId.errors" class="invalid-feedback">
+                    <div *ngIf="f.CountryId.errors.required">Choississez un pays</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="km">Région*</label>
+                <select formControlName="StateId" class="form-control" (change)="onChangeState($event.target.value)"
+                    [ngClass]="{ 'is-invalid': submitted && f.StateId.errors }">
+                    <option value="">Région</option>
+                    <option *ngFor="let state of states" value={{state.id}}>{{state.name}}</option>
+                </select>
+                <div *ngIf="submitted && f.StateId.errors" class="invalid-feedback">
+                    <div *ngIf="f.StateId.errors.required">Choississez une région</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="km">Ville*</label>
+                <select formControlName="CityId" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f.CityId.errors }">
+                    <option value="">Ville</option>
+                    <option *ngFor="let city of cities" value={{city.id}}>{{city.name}}</option>
+                </select>
+                <div *ngIf="submitted && f.CityId.errors" class="invalid-feedback">
+                    <div *ngIf="f.CityId.errors.required">Choississez une ville</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="meetingPoint">Lieu de rendez-vous*</label>
+                <input formControlName="meetingPoint" type="text" class="form-control" id="meetingPoint"
+                    name="meetingPoint" placeholder="ex: au croisement de..."
+                    [ngClass]="{ 'is-invalid': submitted && f.meetingPoint.errors }">
+                <div *ngIf="submitted && f.meetingPoint.errors" class="invalid-feedback">
+                    <div *ngIf="f.meetingPoint.errors.required">Le lieu de rendez-vous est important</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="itinerary">Itineraire</label>
+                <input formControlName="itinerary" type="text" class="form-control" id="itinerary" name="itinerary">
+            </div>
+            <div class="form-group">
+                <label for="description">Description*</label>
+                <textarea formControlName="description" id="description" class="form-control"
+                    placeholder="2000 caractères max." maxlength="2000"
+                    [ngClass]="{ 'is-invalid': submitted && f.description.errors }"></textarea>
+                <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                    <div *ngIf="f.description.errors.required">Ajoutez une description</div>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="form-group column">
+                    <label for="nbparticipants">Nombre de participants*</label>
+                    <input formControlName="numberMaxParticipants" type="number" class="form-control"
+                        id="nbparticipants" maxlength="40" placeholder="max. 40"
+                        [ngClass]="{ 'is-invalid': submitted && f.numberMaxParticipants.errors }">
+                    <div *ngIf="submitted && f.numberMaxParticipants.errors" class="invalid-feedback">
+                        <div *ngIf="f.numberMaxParticipants.errors.required">Un nombre est requis</div>
+                    </div>
+
+                </div>
+                <div class="form-group column">
+                    <label for="level">Difficulté*</label>
+                    <select formControlName="RideLevelId" class="form-control" id="exampleFormControlSelect1"
+                        [ngClass]="{ 'is-invalid': submitted && f.RideLevelId.errors }">
+                        <option *ngFor="let level of levels" value={{level.id}}>{{level.name}}</option>
+                    </select>
+                    <div *ngIf="submitted && f.RideLevelId.errors" class="invalid-feedback">
+                        <div *ngIf="f.RideLevelId.errors.required">Faites un choix</div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="btn">
+                <div class="btn">
+                    <button backButton class="btn btn1 btnred"><span class="btnnoir">Ret</span><span
+                            class="btnred">O</span><span class="btnnoir">ur</span>
+                    </button>
+                </div>
+                <div class="btn">
+                    <button class="btn btn1 btnvert"><span class="btnnoir">M</span><span class="btnvert">O</span><span
+                            class="btnnoir">difier</span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
