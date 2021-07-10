@@ -33,5 +33,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 <img src="https://github.com/amandine-dev/HelloWelo-Front/blob/development/HelloWelo%20screenshots/Hello%20Welo%203.png" width="900"/>
 
+<img src="hhttps://github.com/amandine-dev/HelloWelo-Front/blob/development/HelloWelo%20screenshots/Hello%20Welo%204.png" width="900"/>
+
+
+
 
 
